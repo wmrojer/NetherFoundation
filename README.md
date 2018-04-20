@@ -1,4 +1,4 @@
-[![Logo](src/main/resources/assets/netherfoundation/textures/gui/_logo.png)](https://github.com/TehSeph/NetherFoundation/)
+[![Logo](https://raw.githubusercontent.com/TehSeph/NetherFoundation/master/logo.png)](https://github.com/TehSeph/NetherFoundation/)
 
 [![Version](https://img.shields.io/badge/version-0.1.0a-brightgreen.svg?style=flat-square)]()
 [![BuildStatus](https://img.shields.io/badge/build_status-in--dev-yellow.svg?style=flat-square)]()
