@@ -17,9 +17,9 @@ import org.apache.logging.log4j.Logger;
         version                   = Reference.VERSION,
         dependencies              = Reference.DEPENDENCIES,
         acceptedMinecraftVersions = Reference.MC_VERSIONS,
-        // updateJSON                = Reference.UPDATE_JSON,
-        guiFactory                = Reference.GUI_FACTORY
-        // useMetadata               = true
+        updateJSON                = Reference.UPDATE_JSON,
+        guiFactory                = Reference.GUI_FACTORY,
+        useMetadata               = true
 )
 public class NetherFoundation {
 
