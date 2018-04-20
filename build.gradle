@@ -1,11 +1,11 @@
 buildscript {
-	repositories {
-		jcenter()
-		maven { url = 'http://files.minecraftforge.net/maven' }
-	}
-	dependencies {
-		classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
-	}
+    repositories {
+        jcenter()
+        maven { url = 'http://files.minecraftforge.net/maven' }
+    }
+    dependencies {
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
+    }
 }
 
 apply plugin: 'net.minecraftforge.gradle.forge'
@@ -24,26 +24,26 @@ minecraft {
 }
 
 repositories {
-	maven { url = 'http://maven.covers1624.net' } // Team CoFH
-	maven { url = 'http://chickenbones.net/maven/' } // Chickenbones
-	maven { url = 'http://dvs1.progwml6.com/files/maven' } // JEI
+    maven { url = 'http://maven.covers1624.net' } // Team CoFH
+    maven { url = 'http://chickenbones.net/maven/' } // Chickenbones
+    maven { url = 'http://dvs1.progwml6.com/files/maven' } // JEI
 }
 
 dependencies {
-	compile 'cofh:CoFHCore:1.12.2-4.3.11.+:deobf'
+    compile 'cofh:CoFHCore:1.12.2-4.3.11.+:deobf'
     compile 'cofh:CoFHWorld:1.12.2-1.1.1.+:deobf'
-	compile 'cofh:ThermalFoundation:1.12.2-2.3.11.+:deobf'
-	compile 'mezz.jei:jei_1.12.2:4.8.0.+'
+    compile 'cofh:ThermalFoundation:1.12.2-2.3.11.+:deobf'
+    compile 'mezz.jei:jei_1.12.2:4.8.0.+'
 }
 
 processResources {
-	inputs.property 'version', project.version
-	inputs.property 'mcversion', project.minecraft.version
+    inputs.property 'version', project.version
+    inputs.property 'mcversion', project.minecraft.version
 
-	from(sourceSets.main.resources.srcDirs) {
-		include 'mcmod.info'
-		expand 'version': project.version, 'mcversion': project.minecraft.version
-	}
+    from(sourceSets.main.resources.srcDirs) {
+        include 'mcmod.info'
+        expand 'version': project.version, 'mcversion': project.minecraft.version
+    }
 
     from(sourceSets.main.resources.srcDirs) {
         exclude 'mcmod.info'
@@ -53,16 +53,16 @@ processResources {
 jar { classifier = 'universal' }
 
 task deobfJar(type: Jar) {
-	from sourceSets.main.output
-	classifier = 'deobf'
+    from sourceSets.main.output
+    classifier = 'deobf'
 }
 
 task srcJar(type: Jar) {
-	from sourceSets.main.allSource
-	classifier = 'sources'
+    from sourceSets.main.allSource
+    classifier = 'sources'
 }
 
 artifacts {
-	archives deobfJar
-	archives srcJar
+    archives deobfJar
+    archives srcJar
 }
