@@ -1,0 +1,17 @@
+* text=auto
+
+*.java eol=crlf
+*.json eol=crlf
+
+*.cfg  eol=crlf
+*.ini  eol=crlf
+
+*.md   eol=crlf
+*.txt  eol=crlf
+
+*.png  binary
+
+*.ogg  binary
+
+*.gz   diff=zip
+*.zip  diff=zip

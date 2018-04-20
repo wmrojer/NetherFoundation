@@ -1,0 +1,17 @@
+[
+    {
+        "modid": "netherfoundation",
+        "name": "Nether Foundation",
+        "description": "Nether variants for Vanilla and Thermal Foundation ores!\nSpiritual successor to NetherOres by PowerCrystals.",
+        "version": "${version}",
+        "mcversion": "${mcversion}",
+        "logoFile": "assets/netherfoundation/textures/gui/_logo.png",
+        "url": "https://minecraft.curseforge.com/projects/netherfoundation",
+        "updateJSON": "",
+        "credits": "",
+        "authorList": [ "TehSeph" ],
+        "dependencies": [
+            "forge,cofhcore,cofhworld,thermalfoundation"
+        ]
+    }
+]

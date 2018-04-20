@@ -1,0 +1,16 @@
+## Gradle
+.gradle/
+build/
+
+## ForgeGradle
+run/
+
+## IDEA
+.idea/
+out/
+*.iml
+*.ipr
+*.iws
+
+## Secret Dev Stuff
+reference/
