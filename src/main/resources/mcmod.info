@@ -6,7 +6,7 @@
         "version": "${version}",
         "mcversion": "${mcversion}",
         "logoFile": "assets/netherfoundation/textures/gui/_logo.png",
-        "url": "https://minecraft.curseforge.com/projects/netherfoundation",
+        "url": "https://github.com/TehSeph/NetherFoundation",
         "updateJSON": "",
         "credits": "",
         "authorList": [ "TehSeph" ],
