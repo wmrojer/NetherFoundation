@@ -26,7 +26,7 @@ public class Reference {
     public static final String CLIENT_PROXY       = "tehseph.netherfoundation.proxy.ClientProxy";
     public static final String SERVER_PROXY       = "tehseph.netherfoundation.proxy.ServerProxy";
 
-    public static final String DEPENDENCIES       = "required-after:forge@[14.23.3.2669,);"
+    public static final String DEPENDENCIES       = "required-after:forge@[14.23.3.2673,);"
                                                   + CoFHCore.VERSION_GROUP
                                                   + CoFHWorld.VERSION_GROUP
                                                   + ThermalFoundation.VERSION_GROUP
