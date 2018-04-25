@@ -31,7 +31,7 @@ public class NFRecipes {
 
         RecipeHelper.addShapelessRecipe(ItemHelper.cloneStack(ItemMaterial.dustGold, stackSize), "oreNetherGold", "dustPetrotheum");
         RecipeHelper.addShapelessRecipe(ItemHelper.cloneStack(ItemMaterial.dustIron, stackSize), "oreNetherIron", "dustPetrotheum");
-        RecipeHelper.addShapelessRecipe(ItemHelper.cloneStack(ItemMaterial.dustCoal, stackSize), "oreNetherCoal", "dustPetrotheum");
+        RecipeHelper.addShapelessRecipe(new ItemStack(Items.COAL, stackSize, 0), "oreNetherCoal", "dustPetrotheum");
         RecipeHelper.addShapelessRecipe(new ItemStack(Items.DYE, stackSize, EnumDyeColor.BLUE.getDyeDamage()), "oreNetherLapis", "dustPetrotheum");
         RecipeHelper.addShapelessRecipe(ItemHelper.cloneStack(Items.DIAMOND, stackSize), "oreNetherDiamond", "dustPetrotheum");
         RecipeHelper.addShapelessRecipe(ItemHelper.cloneStack(Items.REDSTONE, stackSize), "oreNetherRedstone", "dustPetrotheum");
