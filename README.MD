@@ -1,9 +1,9 @@
-[![Logo](src/main/resources/assets/netherfoundation/textures/gui/_logo-416x128.png)](https://github.com/TehSeph/NetherFoundation/)
+[![Logo](src/main/resources/assets/netherfoundation/textures/gui/_logo-416x128.png)](https://minecraft.curseforge.com/projects/nether-foundation)
 
-[![Version](https://img.shields.io/badge/version-0.1.0a-brightgreen.svg?style=flat-square)]()
-[![BuildStatus](https://img.shields.io/badge/build_status-in--dev-yellow.svg?style=flat-square)]()
+[![Version](https://img.shields.io/badge/version-0.1.1a-brightgreen.svg?style=flat-square)](https://github.com/TehSeph/NetherFoundation/releases)
+[![BuildStatus](https://img.shields.io/badge/build_status-in--dev-yellow.svg?style=flat-square)](https://github.com/TehSeph/NetherFoundation/)
 [![Minecraft](https://img.shields.io/badge/minecraft-1.12.2-green.svg?style=flat-square)](https://minecraft.net/en/download/)
-[![Forge](https://img.shields.io/badge/forge-14.23.2.2669-green.svg?style=flat-square)](http://files.minecraftforge.net/)
+[![Forge](https://img.shields.io/badge/forge-14.23.2.2673-green.svg?style=flat-square)](http://files.minecraftforge.net/)
 [![License](https://img.shields.io/badge/license-GNU--LGPLv3-blue.svg?style=flat-square)](https://www.gnu.org/licenses/lgpl-3.0.txt)
 
 ---
