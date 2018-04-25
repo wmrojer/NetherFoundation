@@ -5,7 +5,7 @@
         "description": "Nether variants for Vanilla and Thermal Foundation ores!\nSpiritual successor to NetherOres by PowerCrystals.",
         "version": "${version}",
         "mcversion": "${mcversion}",
-        "logoFile": "assets/netherfoundation/textures/gui/_logo.png",
+        "logoFile": "assets/netherfoundation/textures/gui/_logo-416x128.png",
         "url": "https://github.com/TehSeph/NetherFoundation",
         "updateJSON": "",
         "credits": "",
