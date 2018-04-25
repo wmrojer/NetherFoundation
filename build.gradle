@@ -17,8 +17,8 @@ archivesBaseName = 'NetherFoundation'
 compileJava { sourceCompatibility = targetCompatibility = '1.8' }
 
 minecraft {
-    version = '1.12.2-14.23.3.2669'
-    mappings = 'snapshot_20180418' // 'snapshot_20171003'
+    version = '1.12.2-14.23.3.2673'
+    mappings = 'snapshot_20180425' // 'snapshot_20171003'
     runDir = 'run'
     makeObfSourceJar = false
 }
@@ -30,9 +30,9 @@ repositories {
 }
 
 dependencies {
-    compile 'cofh:CoFHCore:1.12.2-4.3.11.+:deobf'
+    compile 'cofh:CoFHCore:1.12.2-4.4.0.+:deobf'
     compile 'cofh:CoFHWorld:1.12.2-1.1.1.+:deobf'
-    compile 'cofh:ThermalFoundation:1.12.2-2.3.11.+:deobf'
+    compile 'cofh:ThermalFoundation:1.12.2-2.4.0.+:deobf'
     compile 'mezz.jei:jei_1.12.2:4.8.0.+'
 }
 
