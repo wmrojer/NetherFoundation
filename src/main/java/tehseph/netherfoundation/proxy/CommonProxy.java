@@ -31,6 +31,8 @@ public class CommonProxy {
         NFBlocks.preInitCommon();
         NFEntities.preInitCommon();
 
+        NFCompat.preInitCommon();
+
         MinecraftForge.EVENT_BUS.register(this);
 
     }

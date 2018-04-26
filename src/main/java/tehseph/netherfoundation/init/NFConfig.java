@@ -35,6 +35,7 @@ public class NFConfig {
     public static double  HELLFISH_MAX_HEALTH = 10.0D;
     public static double  HELLFISH_MOVEMENT_SPEED = 0.33D;
     public static boolean HELLFISH_SET_FIRE = true;
+    public static boolean HELLFISH_WAILA = true;
 
     public static boolean PROCESSING_FURNACE = true;
     public static boolean PROCESSING_INDUCTION_SMELTER = true;
@@ -125,6 +126,10 @@ public class NFConfig {
         comment = "If TRUE, being attacked by Hellfish sets the player on fire.";
         property = NetherFoundation.CONFIG.get(category, "HellfishSetFire", HELLFISH_SET_FIRE, comment).setRequiresMcRestart(true);
         HELLFISH_SET_FIRE = property.getBoolean(HELLFISH_SET_FIRE);
+
+        comment = "If TRUE, Hellfish spawn blocks are hidden from WAILA.";
+        property = NetherFoundation.CONFIG.get(category, "HellfishWAILA", HELLFISH_WAILA, comment).setRequiresMcRestart(true);
+        HELLFISH_WAILA = property.getBoolean(HELLFISH_WAILA);
 
         category = "Processing";
 
