@@ -34,23 +34,21 @@ public class NFRecipes {
 
     private static void addPetrotheumCrafting() {
 
-        int stackSize = NFConfig.PROCESSING_SMELT_TO_ORES ? 3 : 2;
-
-        RecipeHelper.addShapelessRecipe(ItemHelper.getOre("dustGold", stackSize), "oreNetherGold", "dustPetrotheum");
-        RecipeHelper.addShapelessRecipe(ItemHelper.getOre("dustIron", stackSize), "oreNetherIron", "dustPetrotheum");
-        RecipeHelper.addShapelessRecipe(ItemHelper.cloneStack(COAL, stackSize), "oreNetherCoal", "dustPetrotheum");
-        RecipeHelper.addShapelessRecipe(ItemHelper.getOre("gemLapis", stackSize), "oreNetherLapis", "dustPetrotheum");
-        RecipeHelper.addShapelessRecipe(ItemHelper.getOre("gemDiamond", stackSize), "oreNetherDiamond", "dustPetrotheum");
-        RecipeHelper.addShapelessRecipe(ItemHelper.getOre("dustRedstone", stackSize), "oreNetherRedstone", "dustPetrotheum");
-        RecipeHelper.addShapelessRecipe(ItemHelper.getOre("dustCopper", stackSize), "oreNetherCopper", "dustPetrotheum");
-        RecipeHelper.addShapelessRecipe(ItemHelper.getOre("dustTin", stackSize), "oreNetherTin", "dustPetrotheum");
-        RecipeHelper.addShapelessRecipe(ItemHelper.getOre("dustSilver", stackSize), "oreNetherSilver", "dustPetrotheum");
-        RecipeHelper.addShapelessRecipe(ItemHelper.getOre("dustLead", stackSize), "oreNetherLead", "dustPetrotheum");
-        RecipeHelper.addShapelessRecipe(ItemHelper.getOre("dustAluminum", stackSize), "oreNetherAluminum", "dustPetrotheum");
-        RecipeHelper.addShapelessRecipe(ItemHelper.getOre("dustNickel", stackSize), "oreNetherNickel", "dustPetrotheum");
-        RecipeHelper.addShapelessRecipe(ItemHelper.getOre("dustPlatinum", stackSize), "oreNetherPlatinum", "dustPetrotheum");
-        RecipeHelper.addShapelessRecipe(ItemHelper.getOre("dustIridium", stackSize), "oreNetherIridium", "dustPetrotheum");
-        RecipeHelper.addShapelessRecipe(ItemHelper.getOre("dustMithril", stackSize), "oreNetherMithril", "dustPetrotheum");
+        RecipeHelper.addShapelessRecipe(ItemHelper.getOre("dustGold", 3), "oreNetherGold", "dustPetrotheum");
+        RecipeHelper.addShapelessRecipe(ItemHelper.getOre("dustIron", 3), "oreNetherIron", "dustPetrotheum");
+        RecipeHelper.addShapelessRecipe(ItemHelper.cloneStack(COAL, 3), "oreNetherCoal", "dustPetrotheum");
+        RecipeHelper.addShapelessRecipe(ItemHelper.getOre("gemLapis", 3), "oreNetherLapis", "dustPetrotheum");
+        RecipeHelper.addShapelessRecipe(ItemHelper.getOre("gemDiamond", 3), "oreNetherDiamond", "dustPetrotheum");
+        RecipeHelper.addShapelessRecipe(ItemHelper.getOre("dustRedstone", 3), "oreNetherRedstone", "dustPetrotheum");
+        RecipeHelper.addShapelessRecipe(ItemHelper.getOre("dustCopper", 3), "oreNetherCopper", "dustPetrotheum");
+        RecipeHelper.addShapelessRecipe(ItemHelper.getOre("dustTin", 3), "oreNetherTin", "dustPetrotheum");
+        RecipeHelper.addShapelessRecipe(ItemHelper.getOre("dustSilver", 3), "oreNetherSilver", "dustPetrotheum");
+        RecipeHelper.addShapelessRecipe(ItemHelper.getOre("dustLead", 3), "oreNetherLead", "dustPetrotheum");
+        RecipeHelper.addShapelessRecipe(ItemHelper.getOre("dustAluminum", 3), "oreNetherAluminum", "dustPetrotheum");
+        RecipeHelper.addShapelessRecipe(ItemHelper.getOre("dustNickel", 3), "oreNetherNickel", "dustPetrotheum");
+        RecipeHelper.addShapelessRecipe(ItemHelper.getOre("dustPlatinum", 3), "oreNetherPlatinum", "dustPetrotheum");
+        RecipeHelper.addShapelessRecipe(ItemHelper.getOre("dustIridium", 3), "oreNetherIridium", "dustPetrotheum");
+        RecipeHelper.addShapelessRecipe(ItemHelper.getOre("dustMithril", 3), "oreNetherMithril", "dustPetrotheum");
 
     }
 
@@ -83,19 +81,17 @@ public class NFRecipes {
 
     private static void addPetroPyroCrafting() {
 
-        int stackSize = NFConfig.PROCESSING_SMELT_TO_ORES ? 3 : 2;
-
-        RecipeHelper.addShapelessRecipe(ItemHelper.getOre("ingotGold", stackSize), "oreNetherGold", "dustPetrotheum", "dustPyrotheum");
-        RecipeHelper.addShapelessRecipe(ItemHelper.getOre("ingotIron", stackSize), "oreNetherIron", "dustPetrotheum", "dustPyrotheum");
-        RecipeHelper.addShapelessRecipe(ItemHelper.getOre("ingotCopper", stackSize), "oreNetherCopper", "dustPetrotheum", "dustPyrotheum");
-        RecipeHelper.addShapelessRecipe(ItemHelper.getOre("ingotTin", stackSize), "oreNetherTin", "dustPetrotheum", "dustPyrotheum");
-        RecipeHelper.addShapelessRecipe(ItemHelper.getOre("ingotSilver", stackSize), "oreNetherSilver", "dustPetrotheum", "dustPyrotheum");
-        RecipeHelper.addShapelessRecipe(ItemHelper.getOre("ingotLead", stackSize), "oreNetherLead", "dustPetrotheum", "dustPyrotheum");
-        RecipeHelper.addShapelessRecipe(ItemHelper.getOre("ingotAluminum", stackSize), "oreNetherAluminum", "dustPetrotheum", "dustPyrotheum");
-        RecipeHelper.addShapelessRecipe(ItemHelper.getOre("ingotNickel", stackSize), "oreNetherNickel", "dustPetrotheum", "dustPyrotheum");
-        RecipeHelper.addShapelessRecipe(ItemHelper.getOre("ingotPlatinum", stackSize), "oreNetherPlatinum", "dustPetrotheum", "dustPyrotheum");
-        RecipeHelper.addShapelessRecipe(ItemHelper.getOre("ingotIridium", stackSize), "oreNetherIridium", "dustPetrotheum", "dustPyrotheum");
-        RecipeHelper.addShapelessRecipe(ItemHelper.getOre("ingotMithril", stackSize), "oreNetherMithril", "dustPetrotheum", "dustPyrotheum");
+        RecipeHelper.addShapelessRecipe(ItemHelper.getOre("ingotGold", 3), "oreNetherGold", "dustPetrotheum", "dustPyrotheum");
+        RecipeHelper.addShapelessRecipe(ItemHelper.getOre("ingotIron", 3), "oreNetherIron", "dustPetrotheum", "dustPyrotheum");
+        RecipeHelper.addShapelessRecipe(ItemHelper.getOre("ingotCopper", 3), "oreNetherCopper", "dustPetrotheum", "dustPyrotheum");
+        RecipeHelper.addShapelessRecipe(ItemHelper.getOre("ingotTin", 3), "oreNetherTin", "dustPetrotheum", "dustPyrotheum");
+        RecipeHelper.addShapelessRecipe(ItemHelper.getOre("ingotSilver", 3), "oreNetherSilver", "dustPetrotheum", "dustPyrotheum");
+        RecipeHelper.addShapelessRecipe(ItemHelper.getOre("ingotLead", 3), "oreNetherLead", "dustPetrotheum", "dustPyrotheum");
+        RecipeHelper.addShapelessRecipe(ItemHelper.getOre("ingotAluminum", 3), "oreNetherAluminum", "dustPetrotheum", "dustPyrotheum");
+        RecipeHelper.addShapelessRecipe(ItemHelper.getOre("ingotNickel", 3), "oreNetherNickel", "dustPetrotheum", "dustPyrotheum");
+        RecipeHelper.addShapelessRecipe(ItemHelper.getOre("ingotPlatinum", 3), "oreNetherPlatinum", "dustPetrotheum", "dustPyrotheum");
+        RecipeHelper.addShapelessRecipe(ItemHelper.getOre("ingotIridium", 3), "oreNetherIridium", "dustPetrotheum", "dustPyrotheum");
+        RecipeHelper.addShapelessRecipe(ItemHelper.getOre("ingotMithril", 3), "oreNetherMithril", "dustPetrotheum", "dustPyrotheum");
 
     }
 
