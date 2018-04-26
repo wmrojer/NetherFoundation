@@ -7,7 +7,7 @@
         "mcversion": "${mcversion}",
         "logoFile": "assets/netherfoundation/textures/gui/_logo-416x128.png",
         "url": "https://github.com/TehSeph/NetherFoundation",
-        "updateJSON": "",
+        "updateJSON": "https://github.com/TehSeph/NetherFoundation/raw/master/update.json",
         "credits": "",
         "authorList": [ "TehSeph" ],
         "dependencies": [
