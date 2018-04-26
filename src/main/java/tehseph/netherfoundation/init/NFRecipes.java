@@ -97,10 +97,6 @@ public class NFRecipes {
 
         RecipeHelper.addShapelessRecipe(ItemHelper.cloneStack(Items.GOLD_INGOT, stackSize), "oreNetherGold", "dustPetrotheum", "dustPyrotheum");
         RecipeHelper.addShapelessRecipe(ItemHelper.cloneStack(Items.IRON_INGOT, stackSize), "oreNetherIron", "dustPetrotheum", "dustPyrotheum");
-        RecipeHelper.addShapelessRecipe(new ItemStack(Items.COAL, stackSize, 0), "oreNetherCoal", "dustPetrotheum", "dustPyrotheum");
-        RecipeHelper.addShapelessRecipe(new ItemStack(Items.DYE, stackSize, EnumDyeColor.BLUE.getDyeDamage()), "oreNetherLapis", "dustPetrotheum", "dustPyrotheum");
-        RecipeHelper.addShapelessRecipe(ItemHelper.cloneStack(Items.DIAMOND, stackSize), "oreNetherDiamond", "dustPetrotheum", "dustPyrotheum");
-        RecipeHelper.addShapelessRecipe(ItemHelper.cloneStack(Items.REDSTONE, stackSize), "oreNetherRedstone", "dustPetrotheum", "dustPyrotheum");
         RecipeHelper.addShapelessRecipe(ItemHelper.cloneStack(ItemMaterial.ingotCopper, stackSize), "oreNetherCopper", "dustPetrotheum", "dustPyrotheum");
         RecipeHelper.addShapelessRecipe(ItemHelper.cloneStack(ItemMaterial.ingotTin, stackSize), "oreNetherTin", "dustPetrotheum", "dustPyrotheum");
         RecipeHelper.addShapelessRecipe(ItemHelper.cloneStack(ItemMaterial.ingotSilver, stackSize), "oreNetherSilver", "dustPetrotheum", "dustPyrotheum");
