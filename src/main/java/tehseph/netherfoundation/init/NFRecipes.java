@@ -16,10 +16,12 @@ public class NFRecipes {
 
     public static void initCommon() {
 
-        if (TFProps.enablePetrotheumCrafting) addPetrotheumCrafting();
-        if (TFProps.enablePyrotheumCrafting) addPyrotheumCrafting();
+        if (NFConfig.PROCESSING_PETROTHEUM && TFProps.enablePetrotheumCrafting) addPetrotheumCrafting();
+        if (NFConfig.PROCESSING_PYROTHEUM && TFProps.enablePyrotheumCrafting) addPyrotheumCrafting();
 
-        if (TFProps.enablePetrotheumCrafting && TFProps.enablePyrotheumCrafting) addPetroPyroCrafting();
+        if (NFConfig.PROCESSING_PETROTHEUM || NFConfig.PROCESSING_PYROTHEUM) {
+            if (TFProps.enablePetrotheumCrafting && TFProps.enablePyrotheumCrafting) addPetroPyroCrafting();
+        }
 
         if (Loader.isModLoaded("thermalexpansion")) {
 
@@ -28,7 +30,7 @@ public class NFRecipes {
 
         }
 
-        addSmelting();
+        if (NFConfig.PROCESSING_FURNACE) addSmelting();
 
     }
 

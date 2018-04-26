@@ -36,9 +36,12 @@ public class NFConfig {
     public static double  HELLFISH_MOVEMENT_SPEED = 0.33D;
     public static boolean HELLFISH_SET_FIRE = true;
 
-    public static boolean PROCESSING_SMELT_TO_ORES = true;
+    public static boolean PROCESSING_FURNACE = true;
     public static boolean PROCESSING_INDUCTION_SMELTER = true;
+    public static boolean PROCESSING_PETROTHEUM = true;
     public static boolean PROCESSING_PULVERIZER = true;
+    public static boolean PROCESSING_PYROTHEUM = true;
+    public static boolean PROCESSING_SMELT_TO_ORES = true;
 
     public static void preInitCommon(File configFile) {
 
@@ -125,18 +128,30 @@ public class NFConfig {
 
         category = "Processing";
 
-        comment = "If TRUE, nether ores will smelt to their normal variants. (Nether Coal Ore => 2x Coal Ore)\n"
-                + "If FALSE, nether ores will smelt to ingots or some other appropriate item. (Nether Coal Ore => 2x Coal)";
-        property = NetherFoundation.CONFIG.get(category, "SmeltToOres", PROCESSING_SMELT_TO_ORES, comment).setRequiresMcRestart(true);
-        PROCESSING_SMELT_TO_ORES = property.getBoolean(PROCESSING_SMELT_TO_ORES);
+        comment = "If TRUE, enables Furnace (and TE Redstone Furnace) recipes for nether ores.";
+        property = NetherFoundation.CONFIG.get(category, "FurnaceRecipes", PROCESSING_FURNACE, comment).setRequiresMcRestart(true);
+        PROCESSING_FURNACE = property.getBoolean(PROCESSING_FURNACE);
 
         comment = "If TRUE, enables TE Induction Smelter recipes for nether ores.";
         property = NetherFoundation.CONFIG.get(category, "InductionSmelterRecipes", PROCESSING_INDUCTION_SMELTER, comment).setRequiresMcRestart(true);
         PROCESSING_INDUCTION_SMELTER = property.getBoolean(PROCESSING_INDUCTION_SMELTER);
 
+        comment = "If TRUE, enables TF Petrotheum recipes for nether ores.";
+        property = NetherFoundation.CONFIG.get(category, "PetrotheumRecipes", PROCESSING_PETROTHEUM, comment).setRequiresMcRestart(true);
+        PROCESSING_PETROTHEUM = property.getBoolean(PROCESSING_PETROTHEUM);
+
         comment = "If TRUE, enables TE Pulverizer recipes for nether ores.";
         property = NetherFoundation.CONFIG.get(category, "PulverizerRecipes", PROCESSING_PULVERIZER, comment).setRequiresMcRestart(true);
         PROCESSING_PULVERIZER = property.getBoolean(PROCESSING_PULVERIZER);
+
+        comment = "If TRUE, enables TF Pyrotheum recipes for nether ores.";
+        property = NetherFoundation.CONFIG.get(category, "PyrotheumRecipes", PROCESSING_PYROTHEUM, comment).setRequiresMcRestart(true);
+        PROCESSING_PYROTHEUM = property.getBoolean(PROCESSING_PYROTHEUM);
+
+        comment = "If TRUE, nether ores will smelt to their normal variants. (Nether Coal Ore => 2x Coal Ore)\n"
+                + "If FALSE, nether ores will smelt to ingots or some other appropriate item. (Nether Coal Ore => 2x Coal)";
+        property = NetherFoundation.CONFIG.get(category, "SmeltToOres", PROCESSING_SMELT_TO_ORES, comment).setRequiresMcRestart(true);
+        PROCESSING_SMELT_TO_ORES = property.getBoolean(PROCESSING_SMELT_TO_ORES);
 
         if (NetherFoundation.CONFIG.hasChanged()) NetherFoundation.CONFIG.save();
 
