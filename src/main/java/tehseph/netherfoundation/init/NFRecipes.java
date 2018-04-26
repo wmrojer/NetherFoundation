@@ -97,20 +97,26 @@ public class NFRecipes {
 
     private static void addInductionSmelterCrafting() {
 
-        addSmelterRecipes(ItemHelper.getOre("oreNetherGold"), ItemHelper.getOre("ingotGold", 3), ItemHelper.getOre("ingotGold", 5));
-        addSmelterRecipes(ItemHelper.getOre("oreNetherIron"), ItemHelper.getOre("ingotIron", 3), ItemHelper.getOre("ingotIron", 5));
-        addSmelterRecipes(ItemHelper.getOre("oreNetherCopper"), ItemHelper.getOre("ingotCopper", 3), ItemHelper.getOre("ingotCopper", 5));
-        addSmelterRecipes(ItemHelper.getOre("oreNetherTin"), ItemHelper.getOre("ingotTin", 3), ItemHelper.getOre("ingotTin", 5));
-        addSmelterRecipes(ItemHelper.getOre("oreNetherSilver"), ItemHelper.getOre("ingotSilver", 3), ItemHelper.getOre("ingotSilver", 5));
-        addSmelterRecipes(ItemHelper.getOre("oreNetherLead"), ItemHelper.getOre("ingotLead", 3), ItemHelper.getOre("ingotLead", 5));
-        addSmelterRecipes(ItemHelper.getOre("oreNetherAluminum"), ItemHelper.getOre("ingotAluminum", 3), ItemHelper.getOre("ingotAluminum", 5));
-        addSmelterRecipes(ItemHelper.getOre("oreNetherNickel"), ItemHelper.getOre("ingotNickel", 3), ItemHelper.getOre("ingotNickel", 5));
-        addSmelterRecipes(ItemHelper.getOre("oreNetherPlatinum"), ItemHelper.getOre("ingotPlatinum", 3), ItemHelper.getOre("ingotPlatinum", 5));
-        addSmelterRecipes(ItemHelper.getOre("oreNetherIridium"), ItemHelper.getOre("ingotIridium", 3), ItemHelper.getOre("ingotIridium", 5));
-        addSmelterRecipes(ItemHelper.getOre("oreNetherMithril"), ItemHelper.getOre("ingotMithril", 3), ItemHelper.getOre("ingotMithril", 5));
+        int countSand = NFConfig.PROCESSING_SMELT_TO_ORES ? 3 : 4;
+        int countSlag = NFConfig.PROCESSING_SMELT_TO_ORES ? 5 : 6;
 
-        SmelterManager.addRecipe(4000, ItemHelper.getOre("sand"), ItemHelper.getOre("oreNetherLapis"), ItemHelper.getOre("gemLapis", 15), ItemHelper.getOre("crystalSlagRich"), 50);
-        SmelterManager.addRecipe(4000, ItemHelper.getOre("sand"), ItemHelper.getOre("oreNetherRedstone"), ItemHelper.getOre("dustRedstone", 12), ItemHelper.getOre("crystalSlagRich"), 50);
+        addSmelterRecipes(ItemHelper.getOre("oreNetherGold"), ItemHelper.getOre("ingotGold", countSand), ItemHelper.getOre("ingotGold", countSlag));
+        addSmelterRecipes(ItemHelper.getOre("oreNetherIron"), ItemHelper.getOre("ingotIron", countSand), ItemHelper.getOre("ingotIron", countSlag));
+        addSmelterRecipes(ItemHelper.getOre("oreNetherCopper"), ItemHelper.getOre("ingotCopper", countSand), ItemHelper.getOre("ingotCopper", countSlag));
+        addSmelterRecipes(ItemHelper.getOre("oreNetherTin"), ItemHelper.getOre("ingotTin", countSand), ItemHelper.getOre("ingotTin", countSlag));
+        addSmelterRecipes(ItemHelper.getOre("oreNetherSilver"), ItemHelper.getOre("ingotSilver", countSand), ItemHelper.getOre("ingotSilver", countSlag));
+        addSmelterRecipes(ItemHelper.getOre("oreNetherLead"), ItemHelper.getOre("ingotLead", countSand), ItemHelper.getOre("ingotLead", countSlag));
+        addSmelterRecipes(ItemHelper.getOre("oreNetherAluminum"), ItemHelper.getOre("ingotAluminum", countSand), ItemHelper.getOre("ingotAluminum", countSlag));
+        addSmelterRecipes(ItemHelper.getOre("oreNetherNickel"), ItemHelper.getOre("ingotNickel", countSand), ItemHelper.getOre("ingotNickel", countSlag));
+        addSmelterRecipes(ItemHelper.getOre("oreNetherPlatinum"), ItemHelper.getOre("ingotPlatinum", countSand), ItemHelper.getOre("ingotPlatinum", countSlag));
+        addSmelterRecipes(ItemHelper.getOre("oreNetherIridium"), ItemHelper.getOre("ingotIridium", countSand), ItemHelper.getOre("ingotIridium", countSlag));
+        addSmelterRecipes(ItemHelper.getOre("oreNetherMithril"), ItemHelper.getOre("ingotMithril", countSand), ItemHelper.getOre("ingotMithril", countSlag));
+
+        ItemStack outputLapis = NFConfig.PROCESSING_SMELT_TO_ORES ? ItemHelper.getOre("gemLapis", 15) : ItemHelper.getOre("gemLapis", 20);
+        ItemStack outputRedstone = NFConfig.PROCESSING_SMELT_TO_ORES ? ItemHelper.getOre("dustRedstone", 12) : ItemHelper.getOre("dustRedstone", 16);
+
+        SmelterManager.addRecipe(4000, ItemHelper.getOre("sand"), ItemHelper.getOre("oreNetherLapis"), outputLapis, ItemHelper.getOre("crystalSlagRich"), 50);
+        SmelterManager.addRecipe(4000, ItemHelper.getOre("sand"), ItemHelper.getOre("oreNetherRedstone"), outputRedstone, ItemHelper.getOre("crystalSlagRich"), 50);
 
     }
 
@@ -123,21 +129,25 @@ public class NFRecipes {
 
     private static void addPulverizerCrafting() {
 
-        PulverizerManager.addRecipe(4000, ItemHelper.getOre("oreNetherGold"), ItemHelper.getOre("dustGold", 3), ItemHelper.getOre("dustSulfur"), 75);
-        PulverizerManager.addRecipe(4000, ItemHelper.getOre("oreNetherIron"), ItemHelper.getOre("dustIron", 3), ItemHelper.getOre("dustSulfur"), 75);
-        PulverizerManager.addRecipe(4000, ItemHelper.getOre("oreNetherCoal"), ItemHelper.cloneStack(COAL, 3), ItemHelper.getOre("dustSulfur"), 75);
-        PulverizerManager.addRecipe(4000, ItemHelper.getOre("oreNetherLapis"), ItemHelper.getOre("gemLapis", 12), ItemHelper.getOre("dustSulfur"), 75);
-        PulverizerManager.addRecipe(4000, ItemHelper.getOre("oreNetherDiamond"), ItemHelper.getOre("gemDiamond", 3), ItemHelper.getOre("dustSulfur"), 75);
-        PulverizerManager.addRecipe(4000, ItemHelper.getOre("oreNetherRedstone"), ItemHelper.getOre("dustRedstone", 9), ItemHelper.getOre("dustSulfur"), 75);
-        PulverizerManager.addRecipe(4000, ItemHelper.getOre("oreNetherCopper"), ItemHelper.getOre("dustCopper", 3), ItemHelper.getOre("dustSulfur"), 75);
-        PulverizerManager.addRecipe(4000, ItemHelper.getOre("oreNetherTin"), ItemHelper.getOre("dustTin", 3), ItemHelper.getOre("dustSulfur"), 75);
-        PulverizerManager.addRecipe(4000, ItemHelper.getOre("oreNetherSilver"), ItemHelper.getOre("dustSilver", 3), ItemHelper.getOre("dustSulfur"), 75);
-        PulverizerManager.addRecipe(4000, ItemHelper.getOre("oreNetherLead"), ItemHelper.getOre("dustLead", 3), ItemHelper.getOre("dustSulfur"), 75);
-        PulverizerManager.addRecipe(4000, ItemHelper.getOre("oreNetherAluminum"), ItemHelper.getOre("dustAluminum", 3), ItemHelper.getOre("dustSulfur"), 75);
-        PulverizerManager.addRecipe(4000, ItemHelper.getOre("oreNetherNickel"), ItemHelper.getOre("dustNickel", 3), ItemHelper.getOre("dustSulfur"), 75);
-        PulverizerManager.addRecipe(4000, ItemHelper.getOre("oreNetherPlatinum"), ItemHelper.getOre("dustPlatinum", 3), ItemHelper.getOre("dustSulfur"), 75);
-        PulverizerManager.addRecipe(4000, ItemHelper.getOre("oreNetherIridium"), ItemHelper.getOre("dustIridium", 3), ItemHelper.getOre("dustSulfur"), 75);
-        PulverizerManager.addRecipe(4000, ItemHelper.getOre("oreNetherMithril"), ItemHelper.getOre("dustMithril", 3), ItemHelper.getOre("dustSulfur"), 75);
+        int countCommon   = NFConfig.PROCESSING_SMELT_TO_ORES ? 3 : 4;
+        int countLapis    = NFConfig.PROCESSING_SMELT_TO_ORES ? 12 : 16;
+        int countRedstone = NFConfig.PROCESSING_SMELT_TO_ORES ? 9 : 12;
+
+        PulverizerManager.addRecipe(4000, ItemHelper.getOre("oreNetherGold"), ItemHelper.getOre("dustGold", countCommon), ItemHelper.getOre("dustSulfur"), 75);
+        PulverizerManager.addRecipe(4000, ItemHelper.getOre("oreNetherIron"), ItemHelper.getOre("dustIron", countCommon), ItemHelper.getOre("dustSulfur"), 75);
+        PulverizerManager.addRecipe(4000, ItemHelper.getOre("oreNetherCoal"), ItemHelper.cloneStack(COAL, countCommon), ItemHelper.getOre("dustSulfur"), 75);
+        PulverizerManager.addRecipe(4000, ItemHelper.getOre("oreNetherLapis"), ItemHelper.getOre("gemLapis", countLapis), ItemHelper.getOre("dustSulfur"), 75);
+        PulverizerManager.addRecipe(4000, ItemHelper.getOre("oreNetherDiamond"), ItemHelper.getOre("gemDiamond", countCommon), ItemHelper.getOre("dustSulfur"), 75);
+        PulverizerManager.addRecipe(4000, ItemHelper.getOre("oreNetherRedstone"), ItemHelper.getOre("dustRedstone", countRedstone), ItemHelper.getOre("dustSulfur"), 75);
+        PulverizerManager.addRecipe(4000, ItemHelper.getOre("oreNetherCopper"), ItemHelper.getOre("dustCopper", countCommon), ItemHelper.getOre("dustSulfur"), 75);
+        PulverizerManager.addRecipe(4000, ItemHelper.getOre("oreNetherTin"), ItemHelper.getOre("dustTin", countCommon), ItemHelper.getOre("dustSulfur"), 75);
+        PulverizerManager.addRecipe(4000, ItemHelper.getOre("oreNetherSilver"), ItemHelper.getOre("dustSilver", countCommon), ItemHelper.getOre("dustSulfur"), 75);
+        PulverizerManager.addRecipe(4000, ItemHelper.getOre("oreNetherLead"), ItemHelper.getOre("dustLead", countCommon), ItemHelper.getOre("dustSulfur"), 75);
+        PulverizerManager.addRecipe(4000, ItemHelper.getOre("oreNetherAluminum"), ItemHelper.getOre("dustAluminum", countCommon), ItemHelper.getOre("dustSulfur"), 75);
+        PulverizerManager.addRecipe(4000, ItemHelper.getOre("oreNetherNickel"), ItemHelper.getOre("dustNickel", countCommon), ItemHelper.getOre("dustSulfur"), 75);
+        PulverizerManager.addRecipe(4000, ItemHelper.getOre("oreNetherPlatinum"), ItemHelper.getOre("dustPlatinum", countCommon), ItemHelper.getOre("dustSulfur"), 75);
+        PulverizerManager.addRecipe(4000, ItemHelper.getOre("oreNetherIridium"), ItemHelper.getOre("dustIridium", countCommon), ItemHelper.getOre("dustSulfur"), 75);
+        PulverizerManager.addRecipe(4000, ItemHelper.getOre("oreNetherMithril"), ItemHelper.getOre("dustMithril", countCommon), ItemHelper.getOre("dustSulfur"), 75);
 
     }
 
