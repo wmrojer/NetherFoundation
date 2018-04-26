@@ -130,11 +130,11 @@ public class NFConfig {
         property = NetherFoundation.CONFIG.get(category, "SmeltToOres", PROCESSING_SMELT_TO_ORES, comment).setRequiresMcRestart(true);
         PROCESSING_SMELT_TO_ORES = property.getBoolean(PROCESSING_SMELT_TO_ORES);
 
-        comment = "If TRUE, enables TE Induction Smelter recipes for nether ores. (WIP COMING SOON)";
+        comment = "If TRUE, enables TE Induction Smelter recipes for nether ores.";
         property = NetherFoundation.CONFIG.get(category, "InductionSmelterRecipes", PROCESSING_INDUCTION_SMELTER, comment).setRequiresMcRestart(true);
         PROCESSING_INDUCTION_SMELTER = property.getBoolean(PROCESSING_INDUCTION_SMELTER);
 
-        comment = "If TRUE, enables TE Pulverizer recipes for nether ores. (WIP COMING SOON)";
+        comment = "If TRUE, enables TE Pulverizer recipes for nether ores.";
         property = NetherFoundation.CONFIG.get(category, "PulverizerRecipes", PROCESSING_PULVERIZER, comment).setRequiresMcRestart(true);
         PROCESSING_PULVERIZER = property.getBoolean(PROCESSING_PULVERIZER);
 
