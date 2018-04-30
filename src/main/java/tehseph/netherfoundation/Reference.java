@@ -31,6 +31,7 @@ public class Reference {
                                                   + CoFHWorld.VERSION_GROUP
                                                   + ThermalFoundation.VERSION_GROUP
                                                   + "after:thermalexpansion;"
+                                                  + "after:tconstruct;"
                                                   + ""; // leave last to avoid useless git diffs
 
     public static final CreativeTabCore CREATIVE_TAB = new CreativeTabCore(MOD_ID) {
