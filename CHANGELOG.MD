@@ -1,4 +1,19 @@
 ------------------------------------------------------------------------------------------------------------------------
+1.1.0
+------------------------------------------------------------------------------------------------------------------------
+
+ADDED:
+
+- HWYLA/WAILA support (Hellfish egg blocks are hidden as Netherrack. Configurable.)
+- Tinker's Construct support (Adds ore explosions to Cobalt & Ardite ores)
+- Russian language file (Thanks @kellixon)
+
+CHANGED:
+
+- Ore explosions no longer trigger when breaking blocks in creative mode
+- Implemented proper Thermal Expansion recipe support (should fix duplicate recipes)
+
+------------------------------------------------------------------------------------------------------------------------
 1.0.0
 ------------------------------------------------------------------------------------------------------------------------
 
