@@ -66,7 +66,7 @@ public class CommonProxy {
             if (!(silktouch && NFConfig.ANGRY_PIGMEN_SILKTOUCH)) angerPigmen(world, blockPos, player);
         }
 
-        if (NFConfig.EXPLOSIONS && isNetherOre(blockState)) {
+        if (NFConfig.EXPLOSIONS && isNetherOre(blockState) && !player.isCreative()) {
 
             int multi = (NFConfig.EXPLOSIONS_FORTUNE && fortune) ? 2 : 1;
 
