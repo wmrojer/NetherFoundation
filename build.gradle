@@ -19,7 +19,7 @@ compileJava { sourceCompatibility = targetCompatibility = '1.8' }
 minecraft {
 
     version = '1.12.2-14.23.3.2673'
-    mappings = 'snapshot_20180425' // 'snapshot_20171003'
+    mappings = 'snapshot_20180430' // 'snapshot_20171003'
     runDir = 'run'
     makeObfSourceJar = false
 
@@ -29,8 +29,8 @@ repositories {
 
     maven { url = 'http://maven.covers1624.net' } // Team CoFH
     maven { url = 'http://chickenbones.net/maven/' } // Chickenbones
-    maven { url = 'http://dvs1.progwml6.com/files/maven' } // JEI
-    maven { url = 'http://tehnut.info/maven' } // HWYLA/WAILA
+    maven { url = 'http://dvs1.progwml6.com/files/maven' } // JEI / Tinkers Construct
+    maven { url = 'http://tehnut.info/maven' } // HWYLA / WAILA
 
 }
 
@@ -42,9 +42,10 @@ dependencies {
 
     deobfProvided 'cofh:ThermalExpansion:1.12.2-5.4.+:deobf'
 
-    deobfProvided 'mcp.mobius.waila:Hwyla:1.8.25-B40_1.12'
+    deobfProvided 'slimeknights.mantle:Mantle:1.12-1.3.+'
+    deobfProvided 'slimeknights:TConstruct:1.12.2-2.9.+'
 
-    deobfProvided 'mezz.jei:jei_1.12.2:4.9.+'
+    deobfProvided 'mcp.mobius.waila:Hwyla:1.8.25-B40_1.12'
 
 }
 

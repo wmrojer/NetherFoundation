@@ -1,5 +1,7 @@
 package tehseph.netherfoundation.proxy;
 
+import net.minecraftforge.fml.common.Loader;
+import slimeknights.tconstruct.shared.TinkerCommons;
 import tehseph.netherfoundation.init.*;
 
 import cofh.thermalfoundation.init.TFBlocks;
@@ -106,6 +108,10 @@ public class CommonProxy {
     }
 
     private boolean isNetherOre(IBlockState blockState) {
+
+        if (Loader.isModLoaded("tconstruct")) {
+            if (blockState.getBlock() == TinkerCommons.blockOre) return true;
+        }
 
         if (blockState == TFBlocks.blockOreFluid.getStateFromMeta(3)) return true;
         if (blockState.getBlock() == NFBlocks.NETHER_ORE) return true;
