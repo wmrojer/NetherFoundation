@@ -1,0 +1,33 @@
+# Creative Tab
+itemGroup.netherfoundation.creativeTab=Nether Foundation
+
+# Hellfish
+tile.netherfoundation.hellfish.name=Яйцо адского монстра
+entity.netherfoundation.hellfish.name=Чешуйница края
+
+# Ores
+tile.netherfoundation.ore.gold.name=Золотая руда края
+tile.netherfoundation.ore.iron.name=Железная руда края
+tile.netherfoundation.ore.coal.name=Угольная руда края
+tile.netherfoundation.ore.lapis.name=Лазуритовая руда края
+tile.netherfoundation.ore.diamond.name=Алмазная руда края
+tile.netherfoundation.ore.redstone.name=Красная руда края
+tile.netherfoundation.ore.copper.name=Медная руда края
+tile.netherfoundation.ore.tin.name=Оловянная руда края
+tile.netherfoundation.ore.silver.name=Серебряная руда края
+tile.netherfoundation.ore.lead.name=Свинцовая руда края
+tile.netherfoundation.ore.aluminum.name=Алюминиевая руда края
+tile.netherfoundation.ore.nickel.name=Никелевая руда края
+tile.netherfoundation.ore.platinum.name=Платиновая руда края
+tile.netherfoundation.ore.iridium.name=Иридиевая руда края
+tile.netherfoundation.ore.mithril.name=Мифриловая руда края
+
+# Config
+gui.netherfoundation.config.angrypigmen=Злой свиночеловек
+gui.netherfoundation.config.angrypigmen.tooltip=Настройки, относящиеся к злому свиночеловеку
+gui.netherfoundation.config.explosions=Взрывы
+gui.netherfoundation.config.explosions.tooltip=Настройки, относящиеся к взрывам
+gui.netherfoundation.config.hellfish=Чешуйница края
+gui.netherfoundation.config.hellfish.tooltip=Настройки, относящиеся к чешуйнице края
+gui.netherfoundation.config.processing=Обработка
+gui.netherfoundation.config.processing.tooltip=Настройки, относящиеся к обработке
