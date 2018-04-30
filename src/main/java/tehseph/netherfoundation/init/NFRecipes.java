@@ -1,9 +1,8 @@
 package tehseph.netherfoundation.init;
 
+import cofh.api.util.ThermalExpansionHelper;
 import cofh.core.util.helpers.ItemHelper;
 import cofh.core.util.helpers.RecipeHelper;
-import cofh.thermalexpansion.util.managers.machine.PulverizerManager;
-import cofh.thermalexpansion.util.managers.machine.SmelterManager;
 import cofh.thermalfoundation.init.TFProps;
 
 import net.minecraft.init.Items;
@@ -117,15 +116,15 @@ public class NFRecipes {
         ItemStack outputLapis = NFConfig.PROCESSING_SMELT_TO_ORES ? ItemHelper.getOre("gemLapis", 15) : ItemHelper.getOre("gemLapis", 20);
         ItemStack outputRedstone = NFConfig.PROCESSING_SMELT_TO_ORES ? ItemHelper.getOre("dustRedstone", 12) : ItemHelper.getOre("dustRedstone", 16);
 
-        SmelterManager.addRecipe(4000, ItemHelper.getOre("sand"), ItemHelper.getOre("oreNetherLapis"), outputLapis, ItemHelper.getOre("crystalSlagRich"), 50);
-        SmelterManager.addRecipe(4000, ItemHelper.getOre("sand"), ItemHelper.getOre("oreNetherRedstone"), outputRedstone, ItemHelper.getOre("crystalSlagRich"), 50);
+        ThermalExpansionHelper.addSmelterRecipe(4000, ItemHelper.getOre("sand"), ItemHelper.getOre("oreNetherLapis"), outputLapis, ItemHelper.getOre("crystalSlagRich"), 50);
+        ThermalExpansionHelper.addSmelterRecipe(4000, ItemHelper.getOre("sand"), ItemHelper.getOre("oreNetherRedstone"), outputRedstone, ItemHelper.getOre("crystalSlagRich"), 50);
 
     }
 
     private static void addSmelterRecipes(ItemStack input, ItemStack outputSand, ItemStack outputSlag) {
 
-        SmelterManager.addRecipe(4000, ItemHelper.getOre("sand"), input, outputSand, ItemHelper.getOre("crystalSlagRich"), 10);
-        SmelterManager.addRecipe(4000, ItemHelper.getOre("crystalSlagRich"), input, outputSlag, ItemHelper.getOre("crystalSlag"), 75);
+        ThermalExpansionHelper.addSmelterRecipe(4000, ItemHelper.getOre("sand"), input, outputSand, ItemHelper.getOre("crystalSlagRich"), 10);
+        ThermalExpansionHelper.addSmelterRecipe(4000, ItemHelper.getOre("crystalSlagRich"), input, outputSlag, ItemHelper.getOre("crystalSlag"), 75);
 
     }
 
@@ -135,21 +134,21 @@ public class NFRecipes {
         int countLapis    = NFConfig.PROCESSING_SMELT_TO_ORES ? 12 : 16;
         int countRedstone = NFConfig.PROCESSING_SMELT_TO_ORES ? 9 : 12;
 
-        PulverizerManager.addRecipe(4000, ItemHelper.getOre("oreNetherGold"), ItemHelper.getOre("dustGold", countCommon), ItemHelper.getOre("dustSulfur"), 75);
-        PulverizerManager.addRecipe(4000, ItemHelper.getOre("oreNetherIron"), ItemHelper.getOre("dustIron", countCommon), ItemHelper.getOre("dustSulfur"), 75);
-        PulverizerManager.addRecipe(4000, ItemHelper.getOre("oreNetherCoal"), ItemHelper.cloneStack(COAL, countCommon), ItemHelper.getOre("dustSulfur"), 75);
-        PulverizerManager.addRecipe(4000, ItemHelper.getOre("oreNetherLapis"), ItemHelper.getOre("gemLapis", countLapis), ItemHelper.getOre("dustSulfur"), 75);
-        PulverizerManager.addRecipe(4000, ItemHelper.getOre("oreNetherDiamond"), ItemHelper.getOre("gemDiamond", countCommon), ItemHelper.getOre("dustSulfur"), 75);
-        PulverizerManager.addRecipe(4000, ItemHelper.getOre("oreNetherRedstone"), ItemHelper.getOre("dustRedstone", countRedstone), ItemHelper.getOre("dustSulfur"), 75);
-        PulverizerManager.addRecipe(4000, ItemHelper.getOre("oreNetherCopper"), ItemHelper.getOre("dustCopper", countCommon), ItemHelper.getOre("dustSulfur"), 75);
-        PulverizerManager.addRecipe(4000, ItemHelper.getOre("oreNetherTin"), ItemHelper.getOre("dustTin", countCommon), ItemHelper.getOre("dustSulfur"), 75);
-        PulverizerManager.addRecipe(4000, ItemHelper.getOre("oreNetherSilver"), ItemHelper.getOre("dustSilver", countCommon), ItemHelper.getOre("dustSulfur"), 75);
-        PulverizerManager.addRecipe(4000, ItemHelper.getOre("oreNetherLead"), ItemHelper.getOre("dustLead", countCommon), ItemHelper.getOre("dustSulfur"), 75);
-        PulverizerManager.addRecipe(4000, ItemHelper.getOre("oreNetherAluminum"), ItemHelper.getOre("dustAluminum", countCommon), ItemHelper.getOre("dustSulfur"), 75);
-        PulverizerManager.addRecipe(4000, ItemHelper.getOre("oreNetherNickel"), ItemHelper.getOre("dustNickel", countCommon), ItemHelper.getOre("dustSulfur"), 75);
-        PulverizerManager.addRecipe(4000, ItemHelper.getOre("oreNetherPlatinum"), ItemHelper.getOre("dustPlatinum", countCommon), ItemHelper.getOre("dustSulfur"), 75);
-        PulverizerManager.addRecipe(4000, ItemHelper.getOre("oreNetherIridium"), ItemHelper.getOre("dustIridium", countCommon), ItemHelper.getOre("dustSulfur"), 75);
-        PulverizerManager.addRecipe(4000, ItemHelper.getOre("oreNetherMithril"), ItemHelper.getOre("dustMithril", countCommon), ItemHelper.getOre("dustSulfur"), 75);
+        ThermalExpansionHelper.addPulverizerRecipe(4000, ItemHelper.getOre("oreNetherGold"), ItemHelper.getOre("dustGold", countCommon), ItemHelper.getOre("dustSulfur"), 75);
+        ThermalExpansionHelper.addPulverizerRecipe(4000, ItemHelper.getOre("oreNetherIron"), ItemHelper.getOre("dustIron", countCommon), ItemHelper.getOre("dustSulfur"), 75);
+        ThermalExpansionHelper.addPulverizerRecipe(4000, ItemHelper.getOre("oreNetherCoal"), ItemHelper.cloneStack(COAL, countCommon), ItemHelper.getOre("dustSulfur"), 75);
+        ThermalExpansionHelper.addPulverizerRecipe(4000, ItemHelper.getOre("oreNetherLapis"), ItemHelper.getOre("gemLapis", countLapis), ItemHelper.getOre("dustSulfur"), 75);
+        ThermalExpansionHelper.addPulverizerRecipe(4000, ItemHelper.getOre("oreNetherDiamond"), ItemHelper.getOre("gemDiamond", countCommon), ItemHelper.getOre("dustSulfur"), 75);
+        ThermalExpansionHelper.addPulverizerRecipe(4000, ItemHelper.getOre("oreNetherRedstone"), ItemHelper.getOre("dustRedstone", countRedstone), ItemHelper.getOre("dustSulfur"), 75);
+        ThermalExpansionHelper.addPulverizerRecipe(4000, ItemHelper.getOre("oreNetherCopper"), ItemHelper.getOre("dustCopper", countCommon), ItemHelper.getOre("dustSulfur"), 75);
+        ThermalExpansionHelper.addPulverizerRecipe(4000, ItemHelper.getOre("oreNetherTin"), ItemHelper.getOre("dustTin", countCommon), ItemHelper.getOre("dustSulfur"), 75);
+        ThermalExpansionHelper.addPulverizerRecipe(4000, ItemHelper.getOre("oreNetherSilver"), ItemHelper.getOre("dustSilver", countCommon), ItemHelper.getOre("dustSulfur"), 75);
+        ThermalExpansionHelper.addPulverizerRecipe(4000, ItemHelper.getOre("oreNetherLead"), ItemHelper.getOre("dustLead", countCommon), ItemHelper.getOre("dustSulfur"), 75);
+        ThermalExpansionHelper.addPulverizerRecipe(4000, ItemHelper.getOre("oreNetherAluminum"), ItemHelper.getOre("dustAluminum", countCommon), ItemHelper.getOre("dustSulfur"), 75);
+        ThermalExpansionHelper.addPulverizerRecipe(4000, ItemHelper.getOre("oreNetherNickel"), ItemHelper.getOre("dustNickel", countCommon), ItemHelper.getOre("dustSulfur"), 75);
+        ThermalExpansionHelper.addPulverizerRecipe(4000, ItemHelper.getOre("oreNetherPlatinum"), ItemHelper.getOre("dustPlatinum", countCommon), ItemHelper.getOre("dustSulfur"), 75);
+        ThermalExpansionHelper.addPulverizerRecipe(4000, ItemHelper.getOre("oreNetherIridium"), ItemHelper.getOre("dustIridium", countCommon), ItemHelper.getOre("dustSulfur"), 75);
+        ThermalExpansionHelper.addPulverizerRecipe(4000, ItemHelper.getOre("oreNetherMithril"), ItemHelper.getOre("dustMithril", countCommon), ItemHelper.getOre("dustSulfur"), 75);
 
     }
 
