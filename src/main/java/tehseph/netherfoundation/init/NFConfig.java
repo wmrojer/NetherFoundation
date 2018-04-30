@@ -25,7 +25,7 @@ public class NFConfig {
     public static boolean ANGRY_PIGMEN_SILKTOUCH = true;
 
     public static boolean EXPLOSIONS = true;
-    public static double  EXPLOSIONS_CHANCE = 0.075D;
+    public static double  EXPLOSIONS_CHANCE = 0.125D;
     public static boolean EXPLOSIONS_FORTUNE = true;
     public static boolean EXPLOSIONS_SILKTOUCH = true;
 
