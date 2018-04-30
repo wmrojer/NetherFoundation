@@ -1,10 +1,10 @@
 package tehseph.netherfoundation.proxy;
 
-import net.minecraftforge.fml.common.Loader;
-import slimeknights.tconstruct.shared.TinkerCommons;
 import tehseph.netherfoundation.init.*;
 
 import cofh.thermalfoundation.init.TFBlocks;
+
+import slimeknights.tconstruct.shared.TinkerCommons;
 
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.enchantment.Enchantment;
@@ -18,6 +18,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.world.BlockEvent;
+import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
