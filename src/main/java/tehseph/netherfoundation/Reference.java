@@ -2,10 +2,7 @@ package tehseph.netherfoundation;
 
 import tehseph.netherfoundation.init.NFBlocks;
 
-import cofh.CoFHCore;
-import cofh.cofhworld.CoFHWorld;
 import cofh.core.gui.CreativeTabCore;
-import cofh.thermalfoundation.ThermalFoundation;
 
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.relauncher.Side;
@@ -27,9 +24,8 @@ public class Reference {
     public static final String SERVER_PROXY       = "tehseph.netherfoundation.proxy.ServerProxy";
 
     public static final String DEPENDENCIES       = "required-after:forge@[14.23.3.2673,);"
-                                                  + CoFHCore.VERSION_GROUP
-                                                  + CoFHWorld.VERSION_GROUP
-                                                  + ThermalFoundation.VERSION_GROUP
+                                                  + "required-after:thermalfoundation@[2.4,);"
+                                                  + "required-after:cofhworld;"
                                                   + "after:thermalexpansion;"
                                                   + "after:tconstruct;"
                                                   + ""; // leave last to avoid useless git diffs
