@@ -8,7 +8,7 @@ ADDED:
 
 CHANGED:
 
-- Increased ore explosion chance to 12.5% (~1:8 ores mined)
+- Increased default ore explosion chance to 12.5% (~1:8 ores mined)
 - Less strict versioning on dependencies (preparing for CoFH Core 4.5.0)
 
 ------------------------------------------------------------------------------------------------------------------------
