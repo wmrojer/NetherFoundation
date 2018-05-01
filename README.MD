@@ -1,4 +1,4 @@
-[![Logo](../src/main/resources/assets/netherfoundation/textures/gui/_logo-416x128.png)](https://minecraft.curseforge.com/projects/nether-foundation)
+[![Logo](src/main/resources/assets/netherfoundation/textures/gui/_logo-416x128.png)](https://minecraft.curseforge.com/projects/nether-foundation)
 
 [![Version](https://img.shields.io/badge/version-1.1.1-brightgreen.svg?style=flat)](https://github.com/TehSeph/NetherFoundation/releases)
 [![Minecraft](https://img.shields.io/badge/minecraft-1.12.2-green.svg?style=flat)](https://minecraft.net/en/download/)
