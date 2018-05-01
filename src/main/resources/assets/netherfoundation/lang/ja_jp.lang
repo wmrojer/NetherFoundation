@@ -1,0 +1,33 @@
+﻿# Creative Tab
+itemGroup.netherfoundation.creativeTab=Nether Foundation
+
+# Hellfish
+tile.netherfoundation.hellfish.name=ヘルフィッシュ入りのネザーラック
+entity.netherfoundation.hellfish.name=ヘルフィッシュ
+
+# Ores
+tile.netherfoundation.ore.gold.name=ネザー金鉱石
+tile.netherfoundation.ore.iron.name=ネザー鉄鉱石
+tile.netherfoundation.ore.coal.name=ネザー石炭鉱石
+tile.netherfoundation.ore.lapis.name=ネザーラピスラズリ鉱石
+tile.netherfoundation.ore.diamond.name=ネザーダイヤモンド鉱石
+tile.netherfoundation.ore.redstone.name=ネザーレッドストーン鉱石
+tile.netherfoundation.ore.copper.name=ネザー銅鉱石
+tile.netherfoundation.ore.tin.name=ネザー錫鉱石
+tile.netherfoundation.ore.silver.name=ネザー銀鉱石
+tile.netherfoundation.ore.lead.name=ネザー鉛鉱石
+tile.netherfoundation.ore.aluminum.name=ネザーアルミニウム鉱石
+tile.netherfoundation.ore.nickel.name=ネザーニッケル鉱石
+tile.netherfoundation.ore.platinum.name=ネザープラチナ鉱石
+tile.netherfoundation.ore.iridium.name=ネザーイリジウム鉱石
+tile.netherfoundation.ore.mithril.name=ネザーマナ含浸鉱石
+
+# Config
+gui.netherfoundation.config.angrypigmen=アングリーピッグマン
+gui.netherfoundation.config.angrypigmen.tooltip=アングリーピッグマンに関する設定
+gui.netherfoundation.config.explosions=爆発
+gui.netherfoundation.config.explosions.tooltip=爆発に関する設定
+gui.netherfoundation.config.hellfish=ヘルフィッシュ
+gui.netherfoundation.config.hellfish.tooltip=ヘルフィッシュに関する設定
+gui.netherfoundation.config.processing=処理
+gui.netherfoundation.config.processing.tooltip=処理に関する設定
