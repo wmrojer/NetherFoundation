@@ -1,6 +1,6 @@
 [![Logo](src/main/resources/assets/netherfoundation/textures/gui/_logo-416x128.png)](https://minecraft.curseforge.com/projects/nether-foundation)
 
-[![Version](https://img.shields.io/badge/version-1.1.0-brightgreen.svg?style=flat-square)](https://github.com/TehSeph/NetherFoundation/releases)
+[![Version](https://img.shields.io/badge/version-1.1.1-brightgreen.svg?style=flat-square)](https://github.com/TehSeph/NetherFoundation/releases)
 [![Minecraft](https://img.shields.io/badge/minecraft-1.12.2-green.svg?style=flat-square)](https://minecraft.net/en/download/)
 [![Forge](https://img.shields.io/badge/forge-14.23.2.2673-green.svg?style=flat-square)](https://files.minecraftforge.net/)
 [![License](https://img.shields.io/badge/license-GNU--LGPLv3-blue.svg?style=flat-square)](https://www.gnu.org/licenses/lgpl-3.0.txt)
