@@ -2,6 +2,7 @@ package tehseph.netherfoundation.entity.monster;
 
 import tehseph.netherfoundation.Reference;
 import tehseph.netherfoundation.init.NFBlocks;
+import tehseph.netherfoundation.init.NFConfig;
 
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
@@ -14,7 +15,6 @@ import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.event.ForgeEventFactory;
-import tehseph.netherfoundation.init.NFConfig;
 
 import java.util.Random;
 

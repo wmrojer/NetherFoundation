@@ -21,13 +21,19 @@ public class ConfigGuiFactory implements IModGuiFactory {
     public void initialize(Minecraft minecraftInstance) {}
 
     @Override
-    public boolean hasConfigGui() { return true; }
+    public boolean hasConfigGui() {
+        return true;
+    }
 
     @Override
-    public GuiScreen createConfigGui(GuiScreen parent) { return new NFGuiConfig(parent); }
+    public GuiScreen createConfigGui(GuiScreen parent) {
+        return new NFGuiConfig(parent);
+    }
 
     @Override
-    public Set<RuntimeOptionCategoryElement> runtimeGuiCategories() { return null; }
+    public Set<RuntimeOptionCategoryElement> runtimeGuiCategories() {
+        return null;
+    }
 
     public static class NFGuiConfig extends GuiConfig {
 
