@@ -3,8 +3,11 @@ package tehseph.netherfoundation.init;
 import tehseph.netherfoundation.Reference;
 import tehseph.netherfoundation.common.block.*;
 
+import cofh.core.fluid.BlockFluidInteractive;
 import cofh.core.util.helpers.StringHelper;
+import cofh.thermalfoundation.init.TFFluids;
 
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
@@ -52,6 +55,14 @@ public class NFBlocks {
             OreDictionary.registerOre("oreNether" + StringHelper.titleCase(oreName), oreStack);
 
         }
+
+        IBlockState netherLead = NETHER_ORE.getDefaultState().withProperty(BlockNetherOre.VARIANT, BlockNetherOre.Type.LEAD);
+        IBlockState netherGold = NETHER_ORE.getDefaultState().withProperty(BlockNetherOre.VARIANT, BlockNetherOre.Type.GOLD);
+        ((BlockFluidInteractive) TFFluids.blockFluidMana).addInteraction(netherLead, netherGold);
+
+        IBlockState netherSilver  = NETHER_ORE.getDefaultState().withProperty(BlockNetherOre.VARIANT, BlockNetherOre.Type.SILVER);
+        IBlockState netherMithril = NETHER_ORE.getDefaultState().withProperty(BlockNetherOre.VARIANT, BlockNetherOre.Type.MITHRIL);
+        ((BlockFluidInteractive) TFFluids.blockFluidMana).addInteraction(netherSilver, netherMithril);
 
     }
 
