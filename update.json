@@ -1,6 +1,7 @@
 {
   "homepage": "https://minecraft.curseforge.com/projects/nether-foundation",
   "1.12.2": {
+    "1.1.3": "Primal Mana transformations for Nether Lead and Nether Silver.",
     "1.1.2": "More dependency changes for better CoFH mod compatibility.",
     "1.1.1": "Less strict dependencies. Increased explosion chance. Japanese translation.",
     "1.1.0": "HWYLA/WAILA support. TConstruct support. Russian translation.",
@@ -9,7 +10,7 @@
     "0.1.0a": "Initial alpha release."
   },
   "promos": {
-    "1.12.2-latest": "1.1.2",
-    "1.12.2-recommended": "1.1.2"
+    "1.12.2-latest": "1.1.3",
+    "1.12.2-recommended": "1.1.3"
   }
 }
