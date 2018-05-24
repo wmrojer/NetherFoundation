@@ -1,0 +1,33 @@
+﻿# Creative Tab
+itemGroup.netherfoundation.creativeTab=Foundation o' Nether
+
+# Hellfish
+tile.netherfoundation.hellfish.name=Hell'kipper Nether Rock
+entity.netherfoundation.hellfish.name=Hell'kipper
+
+# Ores
+tile.netherfoundation.ore.gold.name=Orrre o' Gold Nether Rock
+tile.netherfoundation.ore.iron.name=Orrre o' Steel Nether Rock
+tile.netherfoundation.ore.coal.name=Orrre o' Fuel Nether Rock
+tile.netherfoundation.ore.lapis.name=Orrre o' Lāzhward Nether Rock
+tile.netherfoundation.ore.diamond.name=Orrre o' Diamond Nether Rock
+tile.netherfoundation.ore.redstone.name=Orrre o' Redstone Nether Rock
+tile.netherfoundation.ore.copper.name=Orrre o' Coppr Nether Rock
+tile.netherfoundation.ore.tin.name=Orrre o' Tin Nether Rock
+tile.netherfoundation.ore.silver.name=Orrre o' Silvr Nether Rock
+tile.netherfoundation.ore.lead.name=Orrre o' Lead Nether Rock
+tile.netherfoundation.ore.aluminum.name=Orrre o' Alum'num Nether Rock
+tile.netherfoundation.ore.nickel.name=Orrre o' Nickl Nether Rock
+tile.netherfoundation.ore.platinum.name=Orrre o' Plat'num Nether Rock
+tile.netherfoundation.ore.iridium.name=Orrre o' Ridium Nether Rock
+tile.netherfoundation.ore.mithril.name=Magic Orrre o' Nether Rock
+
+# Config
+gui.netherfoundation.config.angrypigmen=Pissed Undead Swine
+gui.netherfoundation.config.angrypigmen.tooltip=Scribbles o' Pissed Undead Swine
+gui.netherfoundation.config.explosions=Explosions
+gui.netherfoundation.config.explosions.tooltip=Scribbles o' Explosions
+gui.netherfoundation.config.hellfish=Hell'kipper
+gui.netherfoundation.config.hellfish.tooltip=Scribbles o' Hell'kipper
+gui.netherfoundation.config.processing=Makings
+gui.netherfoundation.config.processing.tooltip=Scribbles o' Makings
