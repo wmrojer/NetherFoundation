@@ -73,7 +73,7 @@ public class CommonProxy {
 
             if (!(silktouch && NFConfig.EXPLOSIONS_SILKTOUCH)) {
                 if (world.rand.nextDouble() <= NFConfig.EXPLOSIONS_CHANCE * multi) {
-                    world.createExplosion(player, blockPos.getX(), blockPos.getY(), blockPos.getZ(), 4.0F, true);
+                    world.createExplosion(player, blockPos.getX(), blockPos.getY(), blockPos.getZ(), (float) NFConfig.EXPLOSIONS_STRENGTH, true);
                 }
             }
 

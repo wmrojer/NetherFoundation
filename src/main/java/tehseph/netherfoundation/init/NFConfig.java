@@ -28,6 +28,7 @@ public class NFConfig {
     public static double  EXPLOSIONS_CHANCE = 0.125D;
     public static boolean EXPLOSIONS_FORTUNE = true;
     public static boolean EXPLOSIONS_SILKTOUCH = true;
+    public static double  EXPLOSIONS_STRENGTH = 4.0D;
 
     public static boolean HELLFISH = true;
     public static double  HELLFISH_ATTACK_DAMAGE = 1.0D;
@@ -100,6 +101,10 @@ public class NFConfig {
         comment = "If TRUE, ore explosions do not trigger when mined with Silktouch.";
         property = NetherFoundation.CONFIG.get(category, "ExplosionsSilktouch", EXPLOSIONS_SILKTOUCH, comment);
         EXPLOSIONS_SILKTOUCH = property.getBoolean(EXPLOSIONS_SILKTOUCH);
+
+        comment = "Sets the strength of the explosion. (Creepers are 3.0, TNT is 4.0, Charged Creepers are 6.0, IC2 Nukes are 60.0)";
+        property = NetherFoundation.CONFIG.get(category, "ExplosionsStrength", EXPLOSIONS_STRENGTH, comment, 0.0D, 64.0D);
+        EXPLOSIONS_STRENGTH = property.getDouble(EXPLOSIONS_STRENGTH);
 
         category = "Hellfish";
 
