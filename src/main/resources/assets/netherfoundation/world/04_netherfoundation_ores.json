@@ -30,7 +30,9 @@
       "generator": {
         "block": {
           "name": "netherfoundation:ore",
-          "metadata": 0
+          "properties": {
+            "type": "gold"
+          }
         },
         "material": "minecraft:netherrack",
         "cluster-size": 8
@@ -55,7 +57,9 @@
       "generator": {
         "block": {
           "name": "netherfoundation:ore",
-          "metadata": 1
+          "properties": {
+            "type": "iron"
+          }
         },
         "material": "minecraft:netherrack",
         "cluster-size": 8
@@ -80,7 +84,9 @@
       "generator": {
         "block": {
           "name": "netherfoundation:ore",
-          "metadata": 2
+          "properties": {
+            "type": "coal"
+          }
         },
         "material": "minecraft:netherrack",
         "cluster-size": 16
@@ -105,7 +111,9 @@
       "generator": {
         "block": {
           "name": "netherfoundation:ore",
-          "metadata": 3
+          "properties": {
+            "type": "lapis"
+          }
         },
         "material": "minecraft:netherrack",
         "cluster-size": 8
@@ -130,7 +138,9 @@
       "generator": {
         "block": {
           "name": "netherfoundation:ore",
-          "metadata": 4
+          "properties": {
+            "type": "diamond"
+          }
         },
         "material": "minecraft:netherrack",
         "cluster-size": 8
@@ -155,7 +165,9 @@
       "generator": {
         "block": {
           "name": "netherfoundation:ore",
-          "metadata": 5
+          "properties": {
+            "type": "redstone"
+          }
         },
         "material": "minecraft:netherrack",
         "cluster-size": 8
@@ -180,7 +192,9 @@
       "generator": {
         "block": {
           "name": "netherfoundation:ore",
-          "metadata": 6
+          "properties": {
+            "type": "copper"
+          }
         },
         "material": "minecraft:netherrack",
         "cluster-size": 8
@@ -205,7 +219,9 @@
       "generator": {
         "block": {
           "name": "netherfoundation:ore",
-          "metadata": 7
+          "properties": {
+            "type": "tin"
+          }
         },
         "material": "minecraft:netherrack",
         "cluster-size": 8
@@ -231,12 +247,16 @@
         "block": [
           {
             "name": "netherfoundation:ore",
-            "metadata": 8,
+            "properties": {
+              "type": "silver"
+            },
             "weight": 80
           },
           {
             "name": "netherfoundation:ore",
-            "metadata": 9,
+            "properties": {
+              "type": "lead"
+            },
             "weight": 20
           }
         ],
@@ -264,12 +284,16 @@
         "block": [
           {
             "name": "netherfoundation:ore",
-            "metadata": 9,
+            "properties": {
+              "type": "lead"
+            },
             "weight": 90
           },
           {
             "name": "netherfoundation:ore",
-            "metadata": 8,
+            "properties": {
+              "type": "silver"
+            },
             "weight": 10
           }
         ],
@@ -296,7 +320,9 @@
       "generator": {
         "block": {
           "name": "netherfoundation:ore",
-          "metadata": 11
+          "properties": {
+            "type": "nickel"
+          }
         },
         "material": "minecraft:netherrack",
         "cluster-size": 4
