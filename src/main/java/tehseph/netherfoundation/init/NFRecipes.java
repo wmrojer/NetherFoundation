@@ -50,6 +50,7 @@ public class NFRecipes {
         RecipeHelper.addShapelessRecipe(ItemHelper.getOre("dustPlatinum", 3), "oreNetherPlatinum", "dustPetrotheum");
         RecipeHelper.addShapelessRecipe(ItemHelper.getOre("dustIridium", 3), "oreNetherIridium", "dustPetrotheum");
         RecipeHelper.addShapelessRecipe(ItemHelper.getOre("dustMithril", 3), "oreNetherMithril", "dustPetrotheum");
+        RecipeHelper.addShapelessRecipe(ItemHelper.getOre("gemEmerald", 3), "oreNetherEmerald", "dustPetrotheum");
 
     }
 
@@ -61,6 +62,7 @@ public class NFRecipes {
         ItemStack lapisStack = NFConfig.PROCESSING_SMELT_TO_ORES ? ItemHelper.getOre("oreLapis", 2) : ItemHelper.getOre("gemLapis", 2);
         ItemStack diamondStack = NFConfig.PROCESSING_SMELT_TO_ORES ? ItemHelper.getOre("oreDiamond", 2) : ItemHelper.getOre("gemDiamond", 2);
         ItemStack redstoneStack = NFConfig.PROCESSING_SMELT_TO_ORES ? ItemHelper.getOre("oreRedstone", 2) : ItemHelper.getOre("dustRedstone", 2);
+        ItemStack emeraldStack = NFConfig.PROCESSING_SMELT_TO_ORES ? ItemHelper.getOre("oreEmerald", 2) : ItemHelper.getOre("gemEmerald", 2);
 
         RecipeHelper.addShapelessRecipe(ItemHelper.getOre(oreType + "Gold", 2), "oreNetherGold", "dustPyrotheum");
         RecipeHelper.addShapelessRecipe(ItemHelper.getOre(oreType + "Iron", 2), "oreNetherIron", "dustPyrotheum");
@@ -77,6 +79,7 @@ public class NFRecipes {
         RecipeHelper.addShapelessRecipe(ItemHelper.getOre(oreType + "Platinum", 2), "oreNetherPlatinum", "dustPyrotheum");
         RecipeHelper.addShapelessRecipe(ItemHelper.getOre(oreType + "Iridium", 2), "oreNetherIridium", "dustPyrotheum");
         RecipeHelper.addShapelessRecipe(ItemHelper.getOre(oreType + "Mithril", 2), "oreNetherMithril", "dustPyrotheum");
+        RecipeHelper.addShapelessRecipe(emeraldStack, "oreNetherEmerald", "dustPyrotheum");
 
     }
 
@@ -149,6 +152,7 @@ public class NFRecipes {
         ThermalExpansionHelper.addPulverizerRecipe(4000, ItemHelper.getOre("oreNetherPlatinum"), ItemHelper.getOre("dustPlatinum", countCommon), ItemHelper.getOre("dustSulfur"), 75);
         ThermalExpansionHelper.addPulverizerRecipe(4000, ItemHelper.getOre("oreNetherIridium"), ItemHelper.getOre("dustIridium", countCommon), ItemHelper.getOre("dustSulfur"), 75);
         ThermalExpansionHelper.addPulverizerRecipe(4000, ItemHelper.getOre("oreNetherMithril"), ItemHelper.getOre("dustMithril", countCommon), ItemHelper.getOre("dustSulfur"), 75);
+        ThermalExpansionHelper.addPulverizerRecipe(4000, ItemHelper.getOre("oreNetherEmerald"), ItemHelper.getOre("gemEmerald", countCommon), ItemHelper.getOre("dustSulfur"), 75);
 
     }
 
@@ -160,6 +164,7 @@ public class NFRecipes {
         ItemStack lapisStack = NFConfig.PROCESSING_SMELT_TO_ORES ? ItemHelper.getOre("oreLapis", 2) : ItemHelper.getOre("gemLapis", 2);
         ItemStack diamondStack = NFConfig.PROCESSING_SMELT_TO_ORES ? ItemHelper.getOre("oreDiamond", 2) : ItemHelper.getOre("gemDiamond", 2);
         ItemStack redstoneStack = NFConfig.PROCESSING_SMELT_TO_ORES ? ItemHelper.getOre("oreRedstone", 2) : ItemHelper.getOre("dustRedstone", 2);
+        ItemStack emeraldStack = NFConfig.PROCESSING_SMELT_TO_ORES ? ItemHelper.getOre("oreEmerald", 2) : ItemHelper.getOre("gemEmerald", 2);
 
         RecipeHelper.addSmelting(ItemHelper.getOre("oreNetherGold"), ItemHelper.getOre(oreType + "Gold", 2));
         RecipeHelper.addSmelting(ItemHelper.getOre("oreNetherIron"), ItemHelper.getOre(oreType + "Iron", 2));
@@ -176,6 +181,7 @@ public class NFRecipes {
         RecipeHelper.addSmelting(ItemHelper.getOre("oreNetherPlatinum"), ItemHelper.getOre(oreType + "Platinum", 2));
         RecipeHelper.addSmelting(ItemHelper.getOre("oreNetherIridium"), ItemHelper.getOre(oreType + "Iridium", 2));
         RecipeHelper.addSmelting(ItemHelper.getOre("oreNetherMithril"), ItemHelper.getOre(oreType + "Mithril", 2));
+        RecipeHelper.addSmelting(ItemHelper.getOre("oreNetherEmerald"), emeraldStack);
 
     }
 

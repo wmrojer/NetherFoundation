@@ -83,10 +83,11 @@ public class BlockNetherOre extends BlockCore {
 
         int meta = state.getValue(VARIANT).getMetadata();
 
-        /* Coal */     if (meta == 2) return 0;
-        /* Lapis */    if (meta == 3) return EnumDyeColor.BLUE.getDyeDamage();
-        /* Diamond */  if (meta == 4) return 0;
-        /* Redstone */ if (meta == 5) return 0;
+        /* Coal */     if (meta == 2)  return 0;
+        /* Lapis */    if (meta == 3)  return EnumDyeColor.BLUE.getDyeDamage();
+        /* Diamond */  if (meta == 4)  return 0;
+        /* Redstone */ if (meta == 5)  return 0;
+        /* Emerald */  if (meta == 15) return 0;
 
         return meta;
 
@@ -98,10 +99,11 @@ public class BlockNetherOre extends BlockCore {
         int meta = state.getValue(VARIANT).getMetadata();
         int bonus = fortune > 0 ? random.nextInt(fortune + 1) + 1 : 1;
 
-        /* Coal */     if (meta == 2) return 2 * bonus;
-        /* Lapis */    if (meta == 3) return 4 + random.nextInt(5) * bonus;
-        /* Diamond */  if (meta == 4) return 2 * bonus;
-        /* Redstone */ if (meta == 5) return 4 + random.nextInt(2) * bonus;
+        /* Coal */     if (meta == 2)  return 2 * bonus;
+        /* Lapis */    if (meta == 3)  return 4 + random.nextInt(5) * bonus;
+        /* Diamond */  if (meta == 4)  return 2 * bonus;
+        /* Redstone */ if (meta == 5)  return 4 + random.nextInt(2) * bonus;
+        /* Emerald */  if (meta == 15) return 2 * bonus;
 
         return this.quantityDroppedWithBonus(fortune, random);
 
@@ -112,10 +114,11 @@ public class BlockNetherOre extends BlockCore {
 
         int meta = state.getValue(VARIANT).getMetadata();
 
-        /* Coal */     if (meta == 2) return Items.COAL;
-        /* Lapis */    if (meta == 3) return Items.DYE;
-        /* Diamond */  if (meta == 4) return Items.DIAMOND;
-        /* Redstone */ if (meta == 5) return Items.REDSTONE;
+        /* Coal */     if (meta == 2)  return Items.COAL;
+        /* Lapis */    if (meta == 3)  return Items.DYE;
+        /* Diamond */  if (meta == 4)  return Items.DIAMOND;
+        /* Redstone */ if (meta == 5)  return Items.REDSTONE;
+        /* Emerald */  if (meta == 15) return Items.EMERALD;
 
         return Item.getItemFromBlock(this);
 
@@ -149,7 +152,8 @@ public class BlockNetherOre extends BlockCore {
 		NICKEL   (11,   "nickel",   0,     EnumRarity.COMMON),
 		PLATINUM (12,   "platinum", 4,     EnumRarity.UNCOMMON),
 		IRIDIUM  (13,   "iridium",  4,     EnumRarity.UNCOMMON),
-		MITHRIL  (14,   "mithril",  8,     EnumRarity.RARE);
+        MITHRIL  (14,   "mithril",  8,     EnumRarity.RARE),
+        EMERALD  (15,   "emerald",  0,     EnumRarity.COMMON);
 
 		private static final Type[] METADATA_LOOKUP = new Type[values().length];
 

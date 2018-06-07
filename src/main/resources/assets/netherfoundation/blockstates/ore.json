@@ -80,6 +80,11 @@
         "textures": {
           "all": "netherfoundation:blocks/ore_nether_mithril"
         }
+      },
+      "emerald": {
+        "textures": {
+          "all": "netherfoundation:blocks/ore_nether_emerald"
+        }
       }
     }
   }

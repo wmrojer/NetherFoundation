@@ -341,6 +341,36 @@
         ]
       },
       "dimension": "all"
+    },
+    "nether_emerald": {
+      "distribution": "uniform",
+      "generator": {
+        "block": {
+          "name": "netherfoundation:ore",
+          "properties": {
+            "type": "emerald"
+          }
+        },
+        "material": "minecraft:netherrack",
+        "cluster-size": 1
+      },
+      "cluster-count": {
+        "min": 3,
+        "max": 6
+      },
+      "min-height": 0,
+      "max-height": 128,
+      "retrogen": "true",
+      "biome": {
+        "restriction": "whitelist",
+        "value": [
+          {
+            "type": "dictionary",
+            "entry": "NETHER"
+          }
+        ]
+      },
+      "dimension": "all"
     }
   }
 }

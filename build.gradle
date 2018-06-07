@@ -19,7 +19,7 @@ compileJava { sourceCompatibility = targetCompatibility = '1.8' }
 minecraft {
 
     version = '1.12.2-14.23.4.2705'
-    mappings = 'snapshot_20180525' // 'snapshot_20171003'
+    mappings = 'snapshot_20180606' // 'snapshot_20171003'
     runDir = 'run'
     makeObfSourceJar = false
 
