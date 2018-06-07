@@ -1,4 +1,21 @@
 ------------------------------------------------------------------------------------------------------------------------
+1.2.0
+------------------------------------------------------------------------------------------------------------------------
+
+ADDED:
+
+- Config option for ore explosion size
+- Worldgen now has "enabled" booleans for toggling individual ores
+- Nether Emerald Ore
+- Pirate language file (arrr!)
+
+CHANGED:
+
+- Updated dependencies to latest recommended Forge (14.23.4.2705)
+- Updated dependencies to latest ThermalFoundation (2.5.0+)
+- Worldgen now uses "properties" instead of "metadata"
+
+------------------------------------------------------------------------------------------------------------------------
 1.1.3
 ------------------------------------------------------------------------------------------------------------------------
 
