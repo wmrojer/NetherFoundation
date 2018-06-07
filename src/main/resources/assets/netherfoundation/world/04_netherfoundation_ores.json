@@ -2,6 +2,7 @@
   "dependencies": "netherfoundation",
   "populate": {
     "hellfish": {
+      "enabled": true,
       "distribution": "uniform",
       "generator": {
         "block": {
@@ -26,6 +27,7 @@
       "dimension": "all"
     },
     "nether_gold": {
+      "enabled": true,
       "distribution": "uniform",
       "generator": {
         "block": {
@@ -53,6 +55,7 @@
       "dimension": "all"
     },
     "nether_iron": {
+      "enabled": true,
       "distribution": "uniform",
       "generator": {
         "block": {
@@ -80,6 +83,7 @@
       "dimension": "all"
     },
     "nether_coal": {
+      "enabled": true,
       "distribution": "uniform",
       "generator": {
         "block": {
@@ -107,6 +111,7 @@
       "dimension": "all"
     },
     "nether_lapis": {
+      "enabled": true,
       "distribution": "uniform",
       "generator": {
         "block": {
@@ -134,6 +139,7 @@
       "dimension": "all"
     },
     "nether_diamond": {
+      "enabled": true,
       "distribution": "uniform",
       "generator": {
         "block": {
@@ -161,6 +167,7 @@
       "dimension": "all"
     },
     "nether_redstone": {
+      "enabled": true,
       "distribution": "uniform",
       "generator": {
         "block": {
@@ -188,6 +195,7 @@
       "dimension": "all"
     },
     "nether_copper": {
+      "enabled": true,
       "distribution": "uniform",
       "generator": {
         "block": {
@@ -215,6 +223,7 @@
       "dimension": "all"
     },
     "nether_tin": {
+      "enabled": true,
       "distribution": "uniform",
       "generator": {
         "block": {
@@ -242,6 +251,7 @@
       "dimension": "all"
     },
     "nether_silver": {
+      "enabled": true,
       "distribution": "uniform",
       "generator": {
         "block": [
@@ -279,6 +289,7 @@
       "dimension": "all"
     },
     "nether_lead": {
+      "enabled": true,
       "distribution": "uniform",
       "generator": {
         "block": [
@@ -316,6 +327,7 @@
       "dimension": "all"
     },
     "nether_nickel": {
+      "enabled": true,
       "distribution": "uniform",
       "generator": {
         "block": {
@@ -343,6 +355,7 @@
       "dimension": "all"
     },
     "nether_emerald": {
+      "enabled": true,
       "distribution": "uniform",
       "generator": {
         "block": {
