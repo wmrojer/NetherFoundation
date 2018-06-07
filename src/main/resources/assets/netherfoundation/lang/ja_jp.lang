@@ -21,6 +21,7 @@ tile.netherfoundation.ore.nickel.name=ネザーニッケル鉱石
 tile.netherfoundation.ore.platinum.name=ネザープラチナ鉱石
 tile.netherfoundation.ore.iridium.name=ネザーイリジウム鉱石
 tile.netherfoundation.ore.mithril.name=ネザーマナ含浸鉱石
+tile.netherfoundation.ore.emerald.name=ネザーエメラルド鉱石
 
 # Config
 gui.netherfoundation.config.angrypigmen=アングリーピッグマン

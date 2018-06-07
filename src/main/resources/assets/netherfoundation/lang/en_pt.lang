@@ -21,6 +21,7 @@ tile.netherfoundation.ore.nickel.name=Orrre o' Nickl Nether Rock
 tile.netherfoundation.ore.platinum.name=Orrre o' Plat'num Nether Rock
 tile.netherfoundation.ore.iridium.name=Orrre o' Ridium Nether Rock
 tile.netherfoundation.ore.mithril.name=Magic Orrre o' Nether Rock
+tile.netherfoundation.ore.emerald.name=Orrre o' Emerald Nether Rock
 
 # Config
 gui.netherfoundation.config.angrypigmen=Pissed Undead Swine

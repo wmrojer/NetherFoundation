@@ -21,6 +21,7 @@ tile.netherfoundation.ore.nickel.name=Nether Nickel Ore
 tile.netherfoundation.ore.platinum.name=Nether Platinum Ore
 tile.netherfoundation.ore.iridium.name=Nether Iridium Ore
 tile.netherfoundation.ore.mithril.name=Mana Infused Nether Ore
+tile.netherfoundation.ore.emerald.name=Nether Emerald Ore
 
 # Config
 gui.netherfoundation.config.angrypigmen=Angry Pigmen

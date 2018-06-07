@@ -21,6 +21,7 @@ tile.netherfoundation.ore.nickel.name=Никелевая руда края
 tile.netherfoundation.ore.platinum.name=Платиновая руда края
 tile.netherfoundation.ore.iridium.name=Иридиевая руда края
 tile.netherfoundation.ore.mithril.name=Мифриловая руда края
+tile.netherfoundation.ore.emerald.name=Изумруд руда края
 
 # Config
 gui.netherfoundation.config.angrypigmen=Злой свиночеловек
