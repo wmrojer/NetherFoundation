@@ -2,7 +2,7 @@
 
 [![Version](https://img.shields.io/badge/version-1.2.0-brightgreen.svg?style=flat)](https://github.com/TehSeph/NetherFoundation/releases)
 [![Minecraft](https://img.shields.io/badge/minecraft-1.12.2-green.svg?style=flat)](https://minecraft.net/en/download/)
-[![Forge](https://img.shields.io/badge/forge-14.23.2.2655-green.svg?style=flat)](https://files.minecraftforge.net/)
+[![Forge](https://img.shields.io/badge/forge-14.23.4.2705-green.svg?style=flat)](https://files.minecraftforge.net/)
 [![License](https://img.shields.io/badge/license-GNU--LGPLv3-blue.svg?style=flat)](https://www.gnu.org/licenses/lgpl-3.0.txt)
 [![DownloadCount](http://cf.way2muchnoise.eu/full_nether-foundation_downloads.svg)](https://minecraft.curseforge.com/projects/nether-foundation/files)
 
