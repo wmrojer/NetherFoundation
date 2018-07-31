@@ -14,12 +14,12 @@ import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
-import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.common.registry.GameRegistry.ObjectHolder;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
-@GameRegistry.ObjectHolder(Reference.MOD_ID)
+@ObjectHolder(Reference.MOD_ID)
 public class NFBlocks {
 
     public static final BlockHellfish HELLFISH   = new BlockHellfish();

@@ -81,6 +81,7 @@ public class EntityHellfish extends EntitySilverfish {
         if (this.isEntityInvulnerable(source)) return false;
 
         if ((source instanceof EntityDamageSource || source == DamageSource.MAGIC) && this.summonHellfish != null) this.summonHellfish.notifyHurt();
+
         return super.attackEntityFrom(source, amount);
 
     }

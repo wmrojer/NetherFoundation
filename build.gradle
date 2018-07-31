@@ -36,7 +36,7 @@ repositories {
 
 dependencies {
 
-    def noJEI = { exclude module: 'jei_1.12.2' }
+    def noJEI = { exclude 'module': 'jei_1.12.2' }
 
     deobfCompile 'cofh:ThermalFoundation:1.12.2-2.5.+:deobf', noJEI
 

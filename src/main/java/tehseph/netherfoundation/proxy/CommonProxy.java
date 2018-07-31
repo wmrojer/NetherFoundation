@@ -55,13 +55,13 @@ public class CommonProxy {
     @SubscribeEvent
     public void onBlockBreak(BlockEvent.BreakEvent event) {
 
-        boolean silktouch   = hasEnchant(event.getPlayer(), Enchantments.SILK_TOUCH);
-        boolean fortune     = hasEnchant(event.getPlayer(), Enchantments.FORTUNE);
+        boolean silktouch = hasEnchant(event.getPlayer(), Enchantments.SILK_TOUCH);
+        boolean fortune   = hasEnchant(event.getPlayer(), Enchantments.FORTUNE);
 
-        World world = event.getWorld();
-        BlockPos blockPos = event.getPos();
-        IBlockState blockState = event.getState();
-        EntityPlayer player = event.getPlayer();
+        World        world      = event.getWorld();
+        BlockPos     blockPos   = event.getPos();
+        IBlockState  blockState = event.getState();
+        EntityPlayer player     = event.getPlayer();
 
         if (NFConfig.ANGRY_PIGMEN && isNetherOre(blockState)) {
             if (!(silktouch && NFConfig.ANGRY_PIGMEN_SILKTOUCH)) angerPigmen(world, blockPos, player);

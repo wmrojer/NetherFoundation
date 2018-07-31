@@ -40,7 +40,6 @@ public class BlockHellfish extends BlockCore {
     }
 
     @Override
-    @SuppressWarnings("deprecation")
     public MapColor getMapColor(IBlockState state, IBlockAccess worldIn, BlockPos pos) {
         return MapColor.NETHERRACK;
     }

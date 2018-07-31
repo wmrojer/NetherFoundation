@@ -171,7 +171,7 @@ public class NFConfig {
 
         File worldGenFile;
         String worldGenPath = "assets/" + Reference.MOD_ID + "/world/";
-        String worldGenOre = "04_netherfoundation_ores.json";
+        String worldGenOre  = "04_netherfoundation_ores.json";
 
         worldGenFile = new File(CoreProps.configDir, "/cofh/world/" + worldGenOre);
 

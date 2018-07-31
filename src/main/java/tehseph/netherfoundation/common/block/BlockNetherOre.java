@@ -24,6 +24,7 @@ import net.minecraft.world.World;
 
 import java.util.Random;
 
+@SuppressWarnings("deprecation")
 public class BlockNetherOre extends BlockCore {
 
     public static final PropertyEnum<Type> VARIANT = PropertyEnum.create("type", Type.class);
@@ -63,7 +64,6 @@ public class BlockNetherOre extends BlockCore {
     }
 
     @Override
-    @SuppressWarnings("deprecation")
     public IBlockState getStateFromMeta(int meta) {
         return this.getDefaultState().withProperty(VARIANT, Type.byMetadata(meta));
     }
@@ -125,7 +125,6 @@ public class BlockNetherOre extends BlockCore {
     }
 
     @Override
-    @SuppressWarnings("deprecation")
     public ItemStack getItem(World worldIn, BlockPos pos, IBlockState state) {
         return new ItemStack(this, 1, state.getValue(VARIANT).getMetadata());
     }

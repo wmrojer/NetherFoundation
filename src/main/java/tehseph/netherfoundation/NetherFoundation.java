@@ -4,6 +4,7 @@ import tehseph.netherfoundation.proxy.CommonProxy;
 
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.Mod.*;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
@@ -23,7 +24,7 @@ import org.apache.logging.log4j.Logger;
 )
 public class NetherFoundation {
 
-    @Mod.Instance(Reference.MOD_ID)
+    @Instance(Reference.MOD_ID)
     public static NetherFoundation INSTANCE;
 
     @SidedProxy(clientSide = Reference.CLIENT_PROXY, serverSide = Reference.SERVER_PROXY, modId = Reference.MOD_ID)
@@ -32,17 +33,17 @@ public class NetherFoundation {
     public static final Logger LOG = LogManager.getLogger(Reference.NAME);
     public static Configuration CONFIG;
 
-    @Mod.EventHandler
+    @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         PROXY.preInit(event);
     }
 
-    @Mod.EventHandler
+    @EventHandler
     public void init(FMLInitializationEvent event) {
         PROXY.init(event);
     }
 
-    @Mod.EventHandler
+    @EventHandler
     public void postInit(FMLPostInitializationEvent event) {
         PROXY.postInit(event);
     }
