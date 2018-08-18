@@ -44,7 +44,15 @@ public class NFConfig {
     public static boolean PROCESSING_PULVERIZER = true;
     public static boolean PROCESSING_PYROTHEUM = true;
     public static boolean PROCESSING_SMELT_TO_ORES = true;
+    public static boolean PROCESSING_MAGMA_CRUCIBLE = true;
+    public static boolean PROCESSING_ENERGETIC_INFUSER = true;
+    public static boolean PROCESSING_AE2_GRINDER = true;
 
+    public static boolean END_ORES = true;
+    public static boolean TC_ORES = false;
+    public static boolean AE2_ORES = true;
+    public static boolean EXTRA_ORES = false;
+    
     public static void preInitCommon(File configFile) {
 
         NetherFoundation.CONFIG = new Configuration(configFile, true);
@@ -163,15 +171,63 @@ public class NFConfig {
         property = NetherFoundation.CONFIG.get(category, "SmeltToOres", PROCESSING_SMELT_TO_ORES, comment).setRequiresMcRestart(true);
         PROCESSING_SMELT_TO_ORES = property.getBoolean(PROCESSING_SMELT_TO_ORES);
 
+        comment = "If TRUE, enables TE Magma Crucible recipes for nether ores.";
+        property = NetherFoundation.CONFIG.get(category, "CrucibleRecipes", PROCESSING_MAGMA_CRUCIBLE, comment).setRequiresMcRestart(true);
+        PROCESSING_MAGMA_CRUCIBLE = property.getBoolean(PROCESSING_MAGMA_CRUCIBLE);
+
+        comment = "If TRUE, enables TE Energetic Infuser recipes for AE2 ores.";
+        property = NetherFoundation.CONFIG.get(category, "ChargerRecipes", PROCESSING_ENERGETIC_INFUSER, comment).setRequiresMcRestart(true);
+        PROCESSING_ENERGETIC_INFUSER = property.getBoolean(PROCESSING_ENERGETIC_INFUSER);
+
+        comment = "If TRUE, enables Applied Energistics 2 Grinder recipes for nether foundation ores.";
+        property = NetherFoundation.CONFIG.get(category, "AE2GrinderRecipes", PROCESSING_AE2_GRINDER, comment).setRequiresMcRestart(true);
+        PROCESSING_AE2_GRINDER = property.getBoolean(PROCESSING_AE2_GRINDER);
+
+
+        category = "Integration";
+        
+        comment = "Add Thermal Foundation End ores";
+        property = NetherFoundation.CONFIG.get(category, "ThermalEndOres", END_ORES, comment).setRequiresMcRestart(true);
+        END_ORES = property.getBoolean(END_ORES);
+
+        comment = "Add Applied Energistics 2 Ores (both Nether and End version)";
+        property = NetherFoundation.CONFIG.get(category, "AE2Ores", AE2_ORES, comment).setRequiresMcRestart(true);
+        AE2_ORES = property.getBoolean(AE2_ORES);
+
+        if (!net.minecraftforge.fml.common.Loader.isModLoaded("appliedenergistics2")) {
+        	AE2_ORES = false;
+        }
+        
+        comment = "Add Tinkers Construct Ores (both Overworld and End version)";
+        property = NetherFoundation.CONFIG.get(category, "TCOres", TC_ORES, comment).setRequiresMcRestart(true);
+        TC_ORES = property.getBoolean(TC_ORES);
+
+        if (!net.minecraftforge.fml.common.Loader.isModLoaded("tconstruct")) {
+        	TC_ORES = false;
+        }
+        
+        comment = "Add Extra Ores (currently only Quartz to overworld and end)";
+        property = NetherFoundation.CONFIG.get(category, "ExtraOres", EXTRA_ORES, comment).setRequiresMcRestart(true);
+        EXTRA_ORES = property.getBoolean(EXTRA_ORES);
+
         if (NetherFoundation.CONFIG.hasChanged()) NetherFoundation.CONFIG.save();
 
     }
 
     private static void addWorldGeneration() {
 
+    	addWorldGenerationConfig("04_netherfoundation_ores");
+    	if (END_ORES) addWorldGenerationConfig("05_netherfoundation_end_ores");
+    	if (AE2_ORES) addWorldGenerationConfig("06_netherfoundation_ae2_ores");
+    	if (TC_ORES) addWorldGenerationConfig("07_netherfoundation_tc_ores");
+    	if (EXTRA_ORES) addWorldGenerationConfig("08_netherfoundation_extra_ores");
+
+    }
+
+    private static void addWorldGenerationConfig(String name) {
         File worldGenFile;
         String worldGenPath = "assets/" + Reference.MOD_ID + "/world/";
-        String worldGenOre  = "04_netherfoundation_ores.json";
+        String worldGenOre  = name + ".json";
 
         worldGenFile = new File(CoreProps.configDir, "/cofh/world/" + worldGenOre);
 
@@ -185,13 +241,10 @@ public class NFConfig {
             } catch (Throwable error) {
 
                 error.printStackTrace();
-
             }
-
         }
-
     }
-
+    
     public static class ConfigEventHandler {
 
         @SubscribeEvent

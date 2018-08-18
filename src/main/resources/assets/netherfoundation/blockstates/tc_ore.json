@@ -1,0 +1,31 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "cube_all",
+    "transform": "forge:default-block"
+  },
+  "variants": {
+    "type": {
+      "ardite": {
+        "textures": {
+          "all": "netherfoundation:blocks/ore_overworld_ardite"
+        }
+      },
+      "cobalt": {
+        "textures": {
+          "all": "netherfoundation:blocks/ore_overworld_cobalt"
+        }
+      },
+      "end_ardite": {
+        "textures": {
+          "all": "netherfoundation:blocks/ore_end_ardite"
+        }
+      },
+      "end_cobalt": {
+        "textures": {
+          "all": "netherfoundation:blocks/ore_end_cobalt"
+        }
+      }
+    }
+  }
+}

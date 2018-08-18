@@ -58,6 +58,9 @@ public class ConfigGuiFactory implements IModGuiFactory {
             element = new ConfigElement(NetherFoundation.CONFIG.getCategory("Processing"));
             list.add(new DummyConfigElement.DummyCategoryElement("Processing", "gui.netherfoundation.config.processing", element.getChildElements()));
 
+            element = new ConfigElement(NetherFoundation.CONFIG.getCategory("Integration"));
+            list.add(new DummyConfigElement.DummyCategoryElement("Integration", "gui.netherfoundation.config.integration", element.getChildElements()));
+
             return list;
 
         }

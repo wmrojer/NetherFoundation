@@ -1,0 +1,91 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "cube_all",
+    "transform": "forge:default-block"
+  },
+  "variants": {
+    "type": {
+      "gold": {
+        "textures": {
+          "all": "netherfoundation:blocks/ore_end_gold"
+        }
+      },
+      "iron": {
+        "textures": {
+          "all": "netherfoundation:blocks/ore_end_iron"
+        }
+      },
+      "coal": {
+        "textures": {
+          "all": "netherfoundation:blocks/ore_end_coal"
+        }
+      },
+      "lapis": {
+        "textures": {
+          "all": "netherfoundation:blocks/ore_end_lapis"
+        }
+      },
+      "diamond": {
+        "textures": {
+          "all": "netherfoundation:blocks/ore_end_Diamond"
+        }
+      },
+      "redstone": {
+        "textures": {
+          "all": "netherfoundation:blocks/ore_end_redstone"
+        }
+      },
+      "copper": {
+        "textures": {
+          "all": "netherfoundation:blocks/ore_end_copper"
+        }
+      },
+      "tin": {
+        "textures": {
+          "all": "netherfoundation:blocks/ore_end_tin"
+        }
+      },
+      "silver": {
+        "textures": {
+          "all": "netherfoundation:blocks/ore_end_silver"
+        }
+      },
+      "lead": {
+        "textures": {
+          "all": "netherfoundation:blocks/ore_end_lead"
+        }
+      },
+      "aluminum": {
+        "textures": {
+          "all": "netherfoundation:blocks/ore_end_aluminum"
+        }
+      },
+      "nickel": {
+        "textures": {
+          "all": "netherfoundation:blocks/ore_end_nickel"
+        }
+      },
+      "platinum": {
+        "textures": {
+          "all": "netherfoundation:blocks/ore_end_platinum"
+        }
+      },
+      "iridium": {
+        "textures": {
+          "all": "netherfoundation:blocks/ore_end_iridium"
+        }
+      },
+      "mithril": {
+        "textures": {
+          "all": "netherfoundation:blocks/ore_end_mithril"
+        }
+      },
+      "emerald": {
+        "textures": {
+          "all": "netherfoundation:blocks/ore_end_emerald"
+        }
+      }
+    }
+  }
+}

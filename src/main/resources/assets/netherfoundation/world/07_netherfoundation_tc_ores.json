@@ -1,0 +1,122 @@
+{
+  "dependencies": [
+	{
+		"id": "netherfoundation"
+	},
+	{
+		"id": "tconstruct"
+	}
+  ],
+  "populate": {
+    "overworld_ardite": {
+      "enabled": false,
+      "distribution": "uniform",
+      "generator": {
+        "block": {
+			"name": "netherfoundation:tc_ore",
+			"properties": {
+				"type": "ardite"
+			}
+		  },
+        "material": "minecraft:stone",
+        "cluster-size": 1
+      },
+      "cluster-count": 1,
+	  "chunk-chance": 4,
+      "min-height": 1,
+      "max-height": 6,
+      "retrogen": true,
+      "biome": "all",
+	  "dimension": {
+		"restriction": "blacklist",
+		"value": [
+		  -1,
+		  1
+		]
+	  }
+    },
+    "overworld_cobalt": {
+      "enabled": false,
+      "distribution": "uniform",
+      "generator": {
+        "block": {
+			"name": "netherfoundation:tc_ore",
+			"properties": {
+				"type": "cobalt"
+			}
+		},
+        "material": "minecraft:stone",
+        "cluster-size": 1
+      },
+      "cluster-count": 1,
+	  "chunk-chance": 4,
+      "min-height": 1,
+      "max-height": 6,
+      "retrogen": true,
+      "biome": "all",
+	  "dimension": {
+		"restriction": "blacklist",
+		"value": [
+		  -1,
+		  1
+		]
+	  }
+    },
+    "end_ardite": {
+      "enabled": true,
+      "distribution": "uniform",
+      "generator": {
+        "block": {
+			"name": "netherfoundation:tc_ore",
+			"properties": {
+				"type": "end_ardite"
+			}
+		  },
+        "material": "minecraft:end_stone",
+        "cluster-size": 2
+      },
+      "cluster-count": 2,
+      "min-height": 10,
+      "max-height": 55,
+      "retrogen": true,
+      "biome": {
+        "restriction": "whitelist",
+        "value": [
+          {
+            "type": "dictionary",
+            "entry": "END"
+          }
+        ]
+      },
+      "dimension": "all"
+    },
+    "end_cobalt": {
+      "enabled": true,
+      "distribution": "uniform",
+      "generator": {
+        "block": {
+			"name": "netherfoundation:tc_ore",
+			"properties": {
+				"type": "end_cobalt"
+			}
+		},
+        "material": "minecraft:end_stone",
+        "cluster-size": 2
+      },
+      "cluster-count": 2,
+      "min-height": 10,
+      "max-height": 55,
+      "retrogen": true,
+      "biome": {
+        "restriction": "whitelist",
+        "value": [
+          {
+            "type": "dictionary",
+            "entry": "END"
+          }
+        ]
+      },
+      "dimension": "all"
+    }
+  }
+}

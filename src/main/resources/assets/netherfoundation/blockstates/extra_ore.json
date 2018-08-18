@@ -1,0 +1,21 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "cube_all",
+    "transform": "forge:default-block"
+  },
+  "variants": {
+    "type": {
+      "quartz": {
+        "textures": {
+          "all": "netherfoundation:blocks/ore_overworld_quartz"
+        }
+      },
+      "end_quartz": {
+        "textures": {
+          "all": "netherfoundation:blocks/ore_end_quartz"
+        }
+      }
+    }
+  }
+}

@@ -1,11 +1,8 @@
 package tehseph.netherfoundation.proxy;
 
 import tehseph.netherfoundation.init.*;
-
 import cofh.thermalfoundation.init.TFBlocks;
-
 import slimeknights.tconstruct.shared.TinkerCommons;
-
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.monster.EntityPigZombie;
@@ -55,28 +52,31 @@ public class CommonProxy {
     @SubscribeEvent
     public void onBlockBreak(BlockEvent.BreakEvent event) {
 
+    	if (!NFConfig.ANGRY_PIGMEN && !NFConfig.EXPLOSIONS) return; // Fast exit
+    	
         boolean silktouch = hasEnchant(event.getPlayer(), Enchantments.SILK_TOUCH);
-        boolean fortune   = hasEnchant(event.getPlayer(), Enchantments.FORTUNE);
 
         World        world      = event.getWorld();
         BlockPos     blockPos   = event.getPos();
         IBlockState  blockState = event.getState();
         EntityPlayer player     = event.getPlayer();
 
-        if (NFConfig.ANGRY_PIGMEN && isNetherOre(blockState)) {
-            if (!(silktouch && NFConfig.ANGRY_PIGMEN_SILKTOUCH)) angerPigmen(world, blockPos, player);
-        }
-
-        if (NFConfig.EXPLOSIONS && isNetherOre(blockState) && !player.isCreative()) {
-
-            int multi = (NFConfig.EXPLOSIONS_FORTUNE && fortune) ? 2 : 1;
-
-            if (!(silktouch && NFConfig.EXPLOSIONS_SILKTOUCH)) {
-                if (world.rand.nextDouble() <= NFConfig.EXPLOSIONS_CHANCE * multi) {
-                    world.createExplosion(player, blockPos.getX(), blockPos.getY(), blockPos.getZ(), (float) NFConfig.EXPLOSIONS_STRENGTH, true);
-                }
-            }
-
+        if ( isNetherOre(blockState) ) {
+	        if (NFConfig.ANGRY_PIGMEN) {
+	            if (!(silktouch && NFConfig.ANGRY_PIGMEN_SILKTOUCH)) angerPigmen(world, blockPos, player);
+	        }
+	
+	        if (NFConfig.EXPLOSIONS && !player.isCreative()) {
+	
+	            boolean fortune   = hasEnchant(event.getPlayer(), Enchantments.FORTUNE);
+	            int multi = (NFConfig.EXPLOSIONS_FORTUNE && fortune) ? 2 : 1;
+	
+	            if (!(silktouch && NFConfig.EXPLOSIONS_SILKTOUCH)) {
+	                if (world.rand.nextDouble() <= NFConfig.EXPLOSIONS_CHANCE * multi) {
+	                    world.createExplosion(player, blockPos.getX(), blockPos.getY(), blockPos.getZ(), (float) NFConfig.EXPLOSIONS_STRENGTH, true);
+	                }
+	            }
+	        }
         }
 
     }
@@ -116,6 +116,8 @@ public class CommonProxy {
 
         if (blockState == TFBlocks.blockOreFluid.getStateFromMeta(3)) return true;
         if (blockState.getBlock() == NFBlocks.NETHER_ORE) return true;
+        if (NFConfig.END_ORES && blockState.getBlock() == NFBlocks.END_ORE) return true;
+        if (NFConfig.AE2_ORES && blockState.getBlock() == NFBlocks.AE2_ORE) return true;
         if (blockState.getBlock() == Blocks.QUARTZ_ORE) return true;
 
         return false;

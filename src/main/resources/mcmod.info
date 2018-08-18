@@ -9,9 +9,9 @@
         "url": "https://github.com/TehSeph/NetherFoundation",
         "updateJSON": "https://github.com/TehSeph/NetherFoundation/raw/master/update.json",
         "credits": "",
-        "authorList": [ "TehSeph" ],
+        "authorList": [ "TehSeph","wmrojer" ],
         "dependencies": [
-            "forge,cofhcore,cofhworld,thermalfoundation"
+            "forge,cofhcore,cofhworld,thermalfoundation,appliedenergistics2"
         ]
     }
 ]

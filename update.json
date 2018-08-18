@@ -1,6 +1,10 @@
 {
   "homepage": "https://minecraft.curseforge.com/projects/nether-foundation",
   "1.12.2": {
+  	"1.3.3": "Added Quartz Ore for overworld and the End also."
+  	"1.3.2": "Added Tinkers Construct Ores for overworld and the End also."
+  	"1.3.1": "Added Applied Energistics 2 Ores for the Nether and the End also."
+  	"1.3.0": "Added Thermal Foundation Ores to the End also."
     "1.2.0": "Nether Emerald. Configurable explosion sizes. Pirate speak.",
     "1.1.3": "Primal Mana transformations for Nether Lead and Nether Silver.",
     "1.1.2": "More dependency changes for better CoFH mod compatibility.",
@@ -11,7 +15,7 @@
     "0.1.0a": "Initial alpha release."
   },
   "promos": {
-    "1.12.2-latest": "1.2.0",
+    "1.12.2-latest": "1.3.3",
     "1.12.2-recommended": "1.2.0"
   }
 }
