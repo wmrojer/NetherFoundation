@@ -1,13 +1,14 @@
 package tehseph.netherfoundation.common.block;
 
-import tehseph.netherfoundation.Reference;
-import cofh.core.block.BlockCore;
-import cofh.core.util.helpers.ItemHelper;
+import java.util.Optional;
+import java.util.Random;
+
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.Minecraft;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.Item;
@@ -18,18 +19,19 @@ import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import appeng.api.AEApi;
 import appeng.api.definitions.IMaterials; 
-
-import java.util.Optional;
-import java.util.Random;
+import cofh.core.block.BlockCore;
+import tehseph.netherfoundation.Reference;
+import tehseph.netherfoundation.client.renderer.effects.ChargedOreFX;
 
 @SuppressWarnings("deprecation")
 public class BlockAE2Ore extends BlockCore {
 
     public static final PropertyEnum<Type> VARIANT = PropertyEnum.create("type", Type.class);
 
-    private static ItemStack certusCrystal;
     private static Optional<ItemStack> certusQuartzCrystal;
     private static Optional<ItemStack> certusQuartzCrystalCharged;
     
@@ -48,8 +50,6 @@ public class BlockAE2Ore extends BlockCore {
 
         this.setHarvestLevel("pickaxe", 2);
 
-        // certusCrystal = ItemHelper.getOre("crystalCertusQuartz", 2); // Didn't work
-        
         IMaterials materialsApi = AEApi.instance().definitions().materials();
         certusQuartzCrystal = materialsApi.certusQuartzCrystal().maybeStack(1);
         certusQuartzCrystalCharged = materialsApi.certusQuartzCrystalCharged().maybeStack(1);
@@ -133,6 +133,47 @@ public class BlockAE2Ore extends BlockCore {
         return new ItemStack(this, 1, state.getValue(VARIANT).getMetadata());
     }
 
+    @Override
+	@SideOnly( Side.CLIENT )
+	public void randomDisplayTick( final IBlockState state, final World w, final BlockPos pos, final Random r )
+	{
+        int meta = state.getValue(VARIANT).getMetadata();
+        if (meta !=  1 && meta != 3) return;     
+
+        double xOff = ( r.nextFloat() );
+		double yOff = ( r.nextFloat() );
+		double zOff = ( r.nextFloat() );
+
+		switch( r.nextInt( 6 ) )
+		{
+			case 0:
+				xOff = -0.01;
+				break;
+			case 1:
+				yOff = -0.01;
+				break;
+			case 2:
+				xOff = -0.01;
+				break;
+			case 3:
+				zOff = -0.01;
+				break;
+			case 4:
+				xOff = 1.01;
+				break;
+			case 5:
+				yOff = 1.01;
+				break;
+			case 6:
+				zOff = 1.01;
+				break;
+		}
+
+		final ChargedOreFX fx = new ChargedOreFX( w, pos.getX() + xOff, pos.getY() + yOff, pos.getZ() + zOff, 0.0f, 0.0f, 0.0f );
+		Minecraft.getMinecraft().effectRenderer.addEffect( fx );
+	}
+    
+    
 	public enum Type implements IStringSerializable {
 
         // TYPE  			(META, NAME,       				ORENAME,				LIGHT, RARITY)

@@ -15,3 +15,9 @@ out/
 ## Secret Dev Stuff
 reference/
 /bin/
+.classpath
+.project
+.settings/org.eclipse.jdt.core.prefs
+build.gradle.bak
+NetherFoundation_Client.launch
+NetherFoundation_Server.launch
