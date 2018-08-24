@@ -23,7 +23,7 @@ import net.minecraftforge.oredict.OreDictionary;
 public class NFBlocks {
 
     public static final BlockHellfish HELLFISH   = new BlockHellfish();
-    public static final BlockNetherOre NETHER_ORE = new BlockNetherOre();
+    public static final BlockNetherOre ORE = new BlockNetherOre();
     public static BlockEndOre END_ORE;
     public static BlockAE2Ore AE2_ORE;
     public static BlockTCOre TC_ORE;
@@ -44,28 +44,28 @@ public class NFBlocks {
 
         }
 
-        NETHER_ORE.setRegistryName("ore");
-        ForgeRegistries.BLOCKS.register(NETHER_ORE);
+        ORE.setRegistryName("ore");
+        ForgeRegistries.BLOCKS.register(ORE);
 
-        itemBlock = new ItemBlockNetherOre(NETHER_ORE);
+        itemBlock = new ItemBlockNetherOre(ORE);
         itemBlock.setRegistryName("ore");
         ForgeRegistries.ITEMS.register(itemBlock);
 
         for (int i = 0; i < BlockNetherOre.Type.values().length; i++) {
 
             String oreName = BlockNetherOre.Type.byMetadata(i).getName();
-            ItemStack oreStack = new ItemStack(NETHER_ORE, 1, i);
+            ItemStack oreStack = new ItemStack(ORE, 1, i);
 
             OreDictionary.registerOre("oreNether" + StringHelper.titleCase(oreName), oreStack);
 
         }
 
-        IBlockState netherLead = NETHER_ORE.getDefaultState().withProperty(BlockNetherOre.VARIANT, BlockNetherOre.Type.LEAD);
-        IBlockState netherGold = NETHER_ORE.getDefaultState().withProperty(BlockNetherOre.VARIANT, BlockNetherOre.Type.GOLD);
+        IBlockState netherLead = ORE.getDefaultState().withProperty(BlockNetherOre.VARIANT, BlockNetherOre.Type.LEAD);
+        IBlockState netherGold = ORE.getDefaultState().withProperty(BlockNetherOre.VARIANT, BlockNetherOre.Type.GOLD);
         ((BlockFluidInteractive) TFFluids.blockFluidMana).addInteraction(netherLead, netherGold);
 
-        IBlockState netherSilver  = NETHER_ORE.getDefaultState().withProperty(BlockNetherOre.VARIANT, BlockNetherOre.Type.SILVER);
-        IBlockState netherMithril = NETHER_ORE.getDefaultState().withProperty(BlockNetherOre.VARIANT, BlockNetherOre.Type.MITHRIL);
+        IBlockState netherSilver  = ORE.getDefaultState().withProperty(BlockNetherOre.VARIANT, BlockNetherOre.Type.SILVER);
+        IBlockState netherMithril = ORE.getDefaultState().withProperty(BlockNetherOre.VARIANT, BlockNetherOre.Type.MITHRIL);
         ((BlockFluidInteractive) TFFluids.blockFluidMana).addInteraction(netherSilver, netherMithril);
 
         if ( NFConfig.END_ORES ) {
@@ -163,8 +163,8 @@ public class NFBlocks {
 
         for (int i = 0; i < BlockNetherOre.Type.values().length; i++) {
 
-            item = Item.getItemFromBlock(NETHER_ORE);
-            model = new ModelResourceLocation(NETHER_ORE.getRegistryName(), "type=" + BlockNetherOre.Type.byMetadata(i).getName());
+            item = Item.getItemFromBlock(ORE);
+            model = new ModelResourceLocation(ORE.getRegistryName(), "type=" + BlockNetherOre.Type.byMetadata(i).getName());
             ModelLoader.setCustomModelResourceLocation(item, i, model);
 
         }

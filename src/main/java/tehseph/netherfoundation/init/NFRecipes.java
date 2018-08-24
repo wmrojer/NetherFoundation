@@ -305,7 +305,7 @@ public class NFRecipes {
     		
     		ItemStack output = ItemHelper.getOre("dustGold", 2);
     		grinder.addRecipe(
-				builder.withInput( new ItemStack(NFBlocks.NETHER_ORE, 1, BlockNetherOre.Type.GOLD.getMetadata()) )
+				builder.withInput( new ItemStack(NFBlocks.ORE, 1, BlockNetherOre.Type.GOLD.getMetadata()) )
 					.withOutput( output )
 					.withFirstOptional( output, (float) 0.9)
 					.build() );
@@ -319,7 +319,7 @@ public class NFRecipes {
     		
     		output = ItemHelper.getOre("dustIron", 2);
     		grinder.addRecipe(
-				builder.withInput( new ItemStack(NFBlocks.NETHER_ORE, 1, BlockNetherOre.Type.IRON.getMetadata()) )
+				builder.withInput( new ItemStack(NFBlocks.ORE, 1, BlockNetherOre.Type.IRON.getMetadata()) )
 					.withOutput( output )
 					.withFirstOptional( output, (float) 0.9)
 					.build() );
@@ -333,7 +333,7 @@ public class NFRecipes {
     		
     		output = ItemHelper.getOre("dustCoal", 2);
     		grinder.addRecipe(
-				builder.withInput( new ItemStack(NFBlocks.NETHER_ORE, 1, BlockNetherOre.Type.COAL.getMetadata()) )
+				builder.withInput( new ItemStack(NFBlocks.ORE, 1, BlockNetherOre.Type.COAL.getMetadata()) )
 					.withOutput( output )
 					.withFirstOptional( output, (float) 0.9)
 					.build() );
@@ -347,7 +347,7 @@ public class NFRecipes {
     		
     		output = ItemHelper.getOre("dustCopper", 2);
     		grinder.addRecipe(
-				builder.withInput( new ItemStack(NFBlocks.NETHER_ORE, 1, BlockNetherOre.Type.COPPER.getMetadata()) )
+				builder.withInput( new ItemStack(NFBlocks.ORE, 1, BlockNetherOre.Type.COPPER.getMetadata()) )
 					.withOutput( output )
 					.withFirstOptional( output, (float) 0.9)
 					.build() );
@@ -361,7 +361,7 @@ public class NFRecipes {
     		
     		output = ItemHelper.getOre("dustTin", 2);
     		grinder.addRecipe(
-				builder.withInput( new ItemStack(NFBlocks.NETHER_ORE, 1, BlockNetherOre.Type.TIN.getMetadata()) )
+				builder.withInput( new ItemStack(NFBlocks.ORE, 1, BlockNetherOre.Type.TIN.getMetadata()) )
 					.withOutput( output )
 					.withFirstOptional( output, (float) 0.9)
 					.build() );
@@ -375,7 +375,7 @@ public class NFRecipes {
     		
     		output = ItemHelper.getOre("dustSilver", 2);
     		grinder.addRecipe(
-				builder.withInput( new ItemStack(NFBlocks.NETHER_ORE, 1, BlockNetherOre.Type.SILVER.getMetadata()) )
+				builder.withInput( new ItemStack(NFBlocks.ORE, 1, BlockNetherOre.Type.SILVER.getMetadata()) )
 					.withOutput( output )
 					.withFirstOptional( output, (float) 0.9)
 					.build() );
@@ -389,7 +389,7 @@ public class NFRecipes {
     		
     		output = ItemHelper.getOre("dustLead", 2);
     		grinder.addRecipe(
-				builder.withInput( new ItemStack(NFBlocks.NETHER_ORE, 1, BlockNetherOre.Type.LEAD.getMetadata()) )
+				builder.withInput( new ItemStack(NFBlocks.ORE, 1, BlockNetherOre.Type.LEAD.getMetadata()) )
 					.withOutput( output )
 					.withFirstOptional( output, (float) 0.9)
 					.build() );
@@ -403,7 +403,7 @@ public class NFRecipes {
     		
     		output = ItemHelper.getOre("dustAluminum", 2);
     		grinder.addRecipe(
-				builder.withInput( new ItemStack(NFBlocks.NETHER_ORE, 1, BlockNetherOre.Type.ALUMINUM.getMetadata()) )
+				builder.withInput( new ItemStack(NFBlocks.ORE, 1, BlockNetherOre.Type.ALUMINUM.getMetadata()) )
 					.withOutput( output )
 					.withFirstOptional( output, (float) 0.9)
 					.build() );
@@ -417,7 +417,7 @@ public class NFRecipes {
     		
     		output = ItemHelper.getOre("dustNickel", 2);
     		grinder.addRecipe(
-				builder.withInput( new ItemStack(NFBlocks.NETHER_ORE, 1, BlockNetherOre.Type.NICKEL.getMetadata()) )
+				builder.withInput( new ItemStack(NFBlocks.ORE, 1, BlockNetherOre.Type.NICKEL.getMetadata()) )
 					.withOutput( output )
 					.withFirstOptional( output, (float) 0.9)
 					.build() );
@@ -431,7 +431,7 @@ public class NFRecipes {
     		
     		output = ItemHelper.getOre("dustPlatinum", 2);
     		grinder.addRecipe(
-				builder.withInput( new ItemStack(NFBlocks.NETHER_ORE, 1, BlockNetherOre.Type.PLATINUM.getMetadata()) )
+				builder.withInput( new ItemStack(NFBlocks.ORE, 1, BlockNetherOre.Type.PLATINUM.getMetadata()) )
 					.withOutput( output )
 					.withFirstOptional( output, (float) 0.9)
 					.build() );
@@ -445,7 +445,7 @@ public class NFRecipes {
     		
     		output = ItemHelper.getOre("dustIridium", 2);
     		grinder.addRecipe(
-				builder.withInput( new ItemStack(NFBlocks.NETHER_ORE, 1, BlockNetherOre.Type.IRIDIUM.getMetadata()) )
+				builder.withInput( new ItemStack(NFBlocks.ORE, 1, BlockNetherOre.Type.IRIDIUM.getMetadata()) )
 					.withOutput( output )
 					.withFirstOptional( output, (float) 0.9)
 					.build() );
@@ -459,7 +459,7 @@ public class NFRecipes {
     		
     		output = ItemHelper.getOre("dustMithril", 2);
     		grinder.addRecipe(
-				builder.withInput( new ItemStack(NFBlocks.NETHER_ORE, 1, BlockNetherOre.Type.MITHRIL.getMetadata()) )
+				builder.withInput( new ItemStack(NFBlocks.ORE, 1, BlockNetherOre.Type.MITHRIL.getMetadata()) )
 					.withOutput( output )
 					.withFirstOptional( output, (float) 0.9)
 					.build() );

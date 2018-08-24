@@ -36,7 +36,7 @@ public class Reference {
         @Override
         @SideOnly(Side.CLIENT)
         public ItemStack getIconItemStack() {
-            return new ItemStack(NFBlocks.NETHER_ORE);
+            return new ItemStack(NFBlocks.ORE);
         }
 
     };
