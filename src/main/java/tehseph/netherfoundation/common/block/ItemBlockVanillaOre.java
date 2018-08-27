@@ -6,9 +6,9 @@ import net.minecraft.block.Block;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemStack;
 
-public class ItemBlockExtraOre extends ItemBlockCore {
+public class ItemBlockVanillaOre extends ItemBlockCore {
 
-    public ItemBlockExtraOre(Block block) {
+    public ItemBlockVanillaOre(Block block) {
 
         super(block);
         setHasSubtypes(true);
@@ -18,12 +18,12 @@ public class ItemBlockExtraOre extends ItemBlockCore {
 
     @Override
     public String getUnlocalizedName(ItemStack stack) {
-        return "tile.netherfoundation.extra_ore." + BlockExtraOre.Type.byMetadata(stack.getItemDamage()).getName().toLowerCase() + ".name";
+        return "tile.netherfoundation.vanilla_ore." + BlockVanillaOre.Type.byMetadata(stack.getItemDamage()).getName().toLowerCase() + ".name";
     }
 
     @Override
     public EnumRarity getRarity(ItemStack stack) {
-        return BlockExtraOre.Type.byMetadata(stack.getItemDamage()).getRarity();
+        return BlockVanillaOre.Type.byMetadata(stack.getItemDamage()).getRarity();
     }
 
 }

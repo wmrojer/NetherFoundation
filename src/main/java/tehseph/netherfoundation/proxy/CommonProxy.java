@@ -115,8 +115,12 @@ public class CommonProxy {
         }
 
         if (blockState == TFBlocks.blockOreFluid.getStateFromMeta(3)) return true;
-        if (blockState.getBlock() == NFBlocks.ORE) return true;
-        if (NFConfig.END_ORES && blockState.getBlock() == NFBlocks.END_ORE) return true;
+//        if (blockState.getBlock() == NFBlocks.ORE) return true;
+        if (blockState.getBlock() == NFBlocks.VANILLA_ORE) return true;
+        if (blockState.getBlock() == NFBlocks.TF_ORE) return true;
+//        if (NFConfig.END_ORES && blockState.getBlock() == NFBlocks.END_ORE) return true;
+        if (NFConfig.END_ORES && blockState.getBlock() == NFBlocks.VANILLA_END_ORE) return true;
+        if (NFConfig.END_ORES && blockState.getBlock() == NFBlocks.TF_END_ORE) return true;
         if (NFConfig.AE2_ORES && blockState.getBlock() == NFBlocks.AE2_ORE) return true;
         if (blockState.getBlock() == Blocks.QUARTZ_ORE) return true;
 

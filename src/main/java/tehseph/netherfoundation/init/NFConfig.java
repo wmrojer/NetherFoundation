@@ -51,8 +51,10 @@ public class NFConfig {
     public static boolean END_ORES = true;
     public static boolean TC_ORES = false;
     public static boolean AE2_ORES = true;
-    public static boolean EXTRA_ORES = false;
-    
+
+    public static boolean OLD_NETHER_ORES = false;
+    public static boolean OLD_END_ORES = false;
+
     public static void preInitCommon(File configFile) {
 
         NetherFoundation.CONFIG = new Configuration(configFile, true);
@@ -206,9 +208,14 @@ public class NFConfig {
         	TC_ORES = false;
         }
         
-        comment = "Add Extra Ores (currently only Quartz to overworld and end)";
-        property = NetherFoundation.CONFIG.get(category, "ExtraOres", EXTRA_ORES, comment).setRequiresMcRestart(true);
-        EXTRA_ORES = property.getBoolean(EXTRA_ORES);
+        comment = "Support old version Nether Ores";
+        property = NetherFoundation.CONFIG.get(category, "OldNetherOres", OLD_NETHER_ORES, comment).setRequiresMcRestart(true);
+        OLD_NETHER_ORES = property.getBoolean(OLD_NETHER_ORES);
+
+        comment = "Support old version End Ores";
+        property = NetherFoundation.CONFIG.get(category, "OldEndOres", OLD_END_ORES, comment).setRequiresMcRestart(true);
+        OLD_END_ORES = property.getBoolean(OLD_END_ORES);
+
 
         if (NetherFoundation.CONFIG.hasChanged()) NetherFoundation.CONFIG.save();
 
@@ -220,8 +227,6 @@ public class NFConfig {
     	if (END_ORES) addWorldGenerationConfig("05_netherfoundation_end_ores");
     	if (AE2_ORES) addWorldGenerationConfig("06_netherfoundation_ae2_ores");
     	if (TC_ORES) addWorldGenerationConfig("07_netherfoundation_tc_ores");
-    	if (EXTRA_ORES) addWorldGenerationConfig("08_netherfoundation_extra_ores");
-
     }
 
     private static void addWorldGenerationConfig(String name) {

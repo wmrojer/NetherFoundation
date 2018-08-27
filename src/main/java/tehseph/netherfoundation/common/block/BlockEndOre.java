@@ -1,15 +1,17 @@
 package tehseph.netherfoundation.common.block;
 
 import tehseph.netherfoundation.Reference;
-
+import tehseph.netherfoundation.common.block.BlockNetherOre.Mapping;
+import tehseph.netherfoundation.init.NFBlocks;
 import cofh.core.block.BlockCore;
-
+import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.Entity;
 import net.minecraft.init.Items;
 import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.EnumRarity;
@@ -58,9 +60,9 @@ public class BlockEndOre extends BlockCore {
 
     @Override
     public void getSubBlocks(CreativeTabs tab, NonNullList<ItemStack> items) {
-        for (int i = 0; i < Type.values().length; i++) {
+        /*for (int i = 0; i < Type.values().length; i++) {
             items.add(new ItemStack(this, 1, i));
-        }
+        }*/
     }
 
     @Override
@@ -89,8 +91,7 @@ public class BlockEndOre extends BlockCore {
         /* Redstone */ if (meta == 5)  return 0;
         /* Emerald */  if (meta == 15) return 0;
 
-        return meta;
-
+        return Mapping.byMetadata(meta).newMetadata;
     }
 
     @Override
@@ -106,7 +107,6 @@ public class BlockEndOre extends BlockCore {
         /* Emerald */  if (meta == 15) return 2 * bonus;
 
         return this.quantityDroppedWithBonus(fortune, random);
-
     }
 
     @Override
@@ -120,20 +120,74 @@ public class BlockEndOre extends BlockCore {
         /* Redstone */ if (meta == 5)  return Items.REDSTONE;
         /* Emerald */  if (meta == 15) return Items.EMERALD;
 
-        return Item.getItemFromBlock(this);
-
+        return Item.getItemFromBlock(Mapping.byMetadata(meta).block); 
     }
 
     @Override
     public ItemStack getItem(World worldIn, BlockPos pos, IBlockState state) {
-        return new ItemStack(this, 1, state.getValue(VARIANT).getMetadata());
+        int meta = state.getValue(VARIANT).getMetadata();
+        return new ItemStack(Mapping.byMetadata(meta).block, 1, Mapping.byMetadata(meta).newMetadata);
     }
 
     @Override
     protected ItemStack getSilkTouchDrop(IBlockState state) {
-        return new ItemStack(this, 1, state.getValue(VARIANT).getMetadata());
+        int meta = state.getValue(VARIANT).getMetadata();
+        return new ItemStack(Mapping.byMetadata(meta).block, 1, Mapping.byMetadata(meta).newMetadata);
     }
 
+    // Prevent block from being destroyed by Ender Dragon
+    @Override
+    public boolean canEntityDestroy(IBlockState state, IBlockAccess world, BlockPos pos, Entity entity)
+    {
+    	return false;
+    }
+
+
+    public enum Mapping {
+    	
+        // TYPE  (META, NAME,       LIGHT, RARITY)
+        GOLD     (0, 0, NFBlocks.VANILLA_END_ORE),
+        IRON     (1, 1, NFBlocks.VANILLA_END_ORE),
+        COAL     (2, 2, NFBlocks.VANILLA_END_ORE),
+        LAPIS    (3, 3, NFBlocks.VANILLA_END_ORE),
+        DIAMOND  (4, 4, NFBlocks.VANILLA_END_ORE),
+        REDSTONE (5, 5, NFBlocks.VANILLA_END_ORE),
+        COPPER   (6, 0, NFBlocks.TF_END_ORE),
+		TIN      (7, 1, NFBlocks.TF_END_ORE),
+		SILVER   (8, 2, NFBlocks.TF_END_ORE),
+		LEAD     (9, 3, NFBlocks.TF_END_ORE),
+		ALUMINUM (10, 4, NFBlocks.TF_END_ORE),
+		NICKEL   (11, 5, NFBlocks.TF_END_ORE),
+		PLATINUM (12, 6, NFBlocks.TF_END_ORE),
+		IRIDIUM  (13, 7, NFBlocks.TF_END_ORE),
+        MITHRIL  (14, 8, NFBlocks.TF_END_ORE),
+        EMERALD  (15, 7, NFBlocks.VANILLA_END_ORE);
+
+		private static final Mapping[] METADATA_LOOKUP = new Mapping[values().length];
+
+        public final int metadata;
+        public final int newMetadata;
+        public final Block block;
+        
+        Mapping(int metadata, int newMetadata, Block block) {
+        	this.metadata = metadata;
+        	this.newMetadata = newMetadata;
+        	this.block = block;
+        }
+        
+		public static Mapping byMetadata(int metadata) {
+			if (metadata < 0 || metadata >= METADATA_LOOKUP.length) metadata = 0;
+			return METADATA_LOOKUP[metadata];
+		}
+
+		static {
+			for (Mapping mapping : values()) {
+				METADATA_LOOKUP[mapping.metadata] = mapping;
+			}
+		}
+    }
+
+    
 	public enum Type implements IStringSerializable {
 
         // TYPE  (META, NAME,       LIGHT, RARITY)

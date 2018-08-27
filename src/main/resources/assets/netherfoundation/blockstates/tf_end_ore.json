@@ -1,0 +1,56 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "cube_all",
+    "transform": "forge:default-block"
+  },
+  "variants": {
+    "type": {
+      "copper": {
+        "textures": {
+          "all": "netherfoundation:blocks/ore_end_copper"
+        }
+      },
+      "tin": {
+        "textures": {
+          "all": "netherfoundation:blocks/ore_end_tin"
+        }
+      },
+      "silver": {
+        "textures": {
+          "all": "netherfoundation:blocks/ore_end_silver"
+        }
+      },
+      "lead": {
+        "textures": {
+          "all": "netherfoundation:blocks/ore_end_lead"
+        }
+      },
+      "aluminum": {
+        "textures": {
+          "all": "netherfoundation:blocks/ore_end_aluminum"
+        }
+      },
+      "nickel": {
+        "textures": {
+          "all": "netherfoundation:blocks/ore_end_nickel"
+        }
+      },
+      "platinum": {
+        "textures": {
+          "all": "netherfoundation:blocks/ore_end_platinum"
+        }
+      },
+      "iridium": {
+        "textures": {
+          "all": "netherfoundation:blocks/ore_end_iridium"
+        }
+      },
+      "mithril": {
+        "textures": {
+          "all": "netherfoundation:blocks/ore_end_mithril"
+        }
+      }
+    }
+  }
+}

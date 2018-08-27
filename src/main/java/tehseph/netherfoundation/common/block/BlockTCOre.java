@@ -9,6 +9,7 @@ import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.Entity;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -111,6 +112,13 @@ public class BlockTCOre extends BlockCore {
         return new ItemStack(this, 1, state.getValue(VARIANT).getMetadata());
     }
 
+    // Prevent block from being destroyed by Ender Dragon
+    @Override
+    public boolean canEntityDestroy(IBlockState state, IBlockAccess world, BlockPos pos, Entity entity)
+    {
+    	return false;
+    }
+    
 	public enum Type implements IStringSerializable {
 
         // TYPE  	(META, NAME,			ORENAME,				LIGHT, RARITY)

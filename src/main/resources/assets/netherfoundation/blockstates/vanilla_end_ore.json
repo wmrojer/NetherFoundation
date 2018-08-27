@@ -1,0 +1,56 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "cube_all",
+    "transform": "forge:default-block"
+  },
+  "variants": {
+    "type": {
+      "gold": {
+        "textures": {
+          "all": "netherfoundation:blocks/ore_end_gold"
+        }
+      },
+      "iron": {
+        "textures": {
+          "all": "netherfoundation:blocks/ore_end_iron"
+        }
+      },
+      "coal": {
+        "textures": {
+          "all": "netherfoundation:blocks/ore_end_coal"
+        }
+      },
+      "lapis": {
+        "textures": {
+          "all": "netherfoundation:blocks/ore_end_lapis"
+        }
+      },
+      "diamond": {
+        "textures": {
+          "all": "netherfoundation:blocks/ore_end_Diamond"
+        }
+      },
+      "redstone": {
+        "textures": {
+          "all": "netherfoundation:blocks/ore_end_redstone"
+        }
+      },
+      "lit_redstone": {
+        "textures": {
+          "all": "netherfoundation:blocks/ore_end_redstone"
+        }
+      },
+      "emerald": {
+        "textures": {
+          "all": "netherfoundation:blocks/ore_end_emerald"
+        }
+      },
+      "quartz": {
+        "textures": {
+          "all": "netherfoundation:blocks/ore_end_quartz"
+        }
+      }
+    }
+  }
+}

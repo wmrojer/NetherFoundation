@@ -2,18 +2,6 @@ package tehseph.netherfoundation.init;
 
 import java.util.Optional;
 
-import tehseph.netherfoundation.common.block.BlockAE2Ore;
-import tehseph.netherfoundation.common.block.BlockEndOre;
-import tehseph.netherfoundation.common.block.BlockExtraOre;
-import tehseph.netherfoundation.common.block.BlockNetherOre;
-import appeng.api.AEApi;
-import appeng.api.definitions.IMaterials;
-import appeng.api.features.IGrinderRecipeBuilder;
-import appeng.api.features.IGrinderRegistry;
-import cofh.api.util.ThermalExpansionHelper;
-import cofh.core.util.helpers.ItemHelper;
-import cofh.core.util.helpers.RecipeHelper;
-import cofh.thermalfoundation.init.TFProps;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
@@ -21,6 +9,22 @@ import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.OreDictionary;
+
+import cofh.api.util.ThermalExpansionHelper;
+import cofh.core.util.helpers.ItemHelper;
+import cofh.core.util.helpers.RecipeHelper;
+import cofh.thermalfoundation.init.TFProps;
+
+import appeng.api.AEApi;
+import appeng.api.definitions.IMaterials;
+import appeng.api.features.IGrinderRecipeBuilder;
+import appeng.api.features.IGrinderRegistry;
+
+import tehseph.netherfoundation.common.block.BlockVanillaOre;
+import tehseph.netherfoundation.common.block.BlockTFOre;
+import tehseph.netherfoundation.common.block.BlockVanillaEndOre;
+import tehseph.netherfoundation.common.block.BlockTFEndOre;
+import tehseph.netherfoundation.common.block.BlockAE2Ore;
 
 public class NFRecipes {
 
@@ -225,6 +229,10 @@ public class NFRecipes {
         addSmeltingOreDict("oreNetherLapis",    lapisStack);
         addSmeltingOreDict("oreNetherDiamond",  diamondStack);
         addSmeltingOreDict("oreNetherRedstone", redstoneStack);
+        addSmeltingOreDict("oreNetherEmerald",  emeraldStack);
+
+        GameRegistry.addSmelting( new ItemStack(NFBlocks.VANILLA_END_ORE, 1, 8), ItemHelper.getOre("gemQuartz", 1), 0.2F); // End Quartz. Can't use OreDict since it returns the normal quartz
+        
         addSmeltingOreDict("oreNetherCopper",   ItemHelper.getOre(oreType + "Copper", 2));
         addSmeltingOreDict("oreNetherTin",      ItemHelper.getOre(oreType + "Tin", 2));
         addSmeltingOreDict("oreNetherSilver",   ItemHelper.getOre(oreType + "Silver", 2));
@@ -234,7 +242,6 @@ public class NFRecipes {
         addSmeltingOreDict("oreNetherPlatinum", ItemHelper.getOre(oreType + "Platinum", 2));
         addSmeltingOreDict("oreNetherIridium",  ItemHelper.getOre(oreType + "Iridium", 2));
         addSmeltingOreDict("oreNetherMithril",  ItemHelper.getOre(oreType + "Mithril", 2));
-        addSmeltingOreDict("oreNetherEmerald",  emeraldStack);
         
         if ( NFConfig.AE2_ORES ) {
             ItemStack certusStack = NFConfig.PROCESSING_SMELT_TO_ORES ? ItemHelper.getOre("oreCertusQuartz", 2) : ItemHelper.getOre("crystalCertusQuartz", 2);
@@ -303,172 +310,198 @@ public class NFRecipes {
     		IGrinderRegistry grinder = AEApi.instance().registries().grinder();
     		IGrinderRecipeBuilder builder = grinder.builder();
     		
-    		ItemStack output = ItemHelper.getOre("dustGold", 2);
+    		ItemStack output1 = ItemHelper.getOre("dustGold", 1);
+    		ItemStack output2 = ItemHelper.getOre("dustGold", 2);
     		grinder.addRecipe(
-				builder.withInput( new ItemStack(NFBlocks.ORE, 1, BlockNetherOre.Type.GOLD.getMetadata()) )
-					.withOutput( output )
-					.withFirstOptional( output, (float) 0.9)
+				builder.withInput( new ItemStack(NFBlocks.VANILLA_ORE, 1, BlockVanillaOre.Type.GOLD.getMetadata()) )
+					.withOutput( output2 )
+					.withFirstOptional( output1, (float) 0.9)
 					.build() );
     		
     		if (NFConfig.END_ORES)
     			grinder.addRecipe(
-    				builder.withInput( new ItemStack(NFBlocks.END_ORE, 1, BlockEndOre.Type.GOLD.getMetadata()) )
-    					.withOutput( output )
-    					.withFirstOptional( output, (float) 0.9)
+    				builder.withInput( new ItemStack(NFBlocks.VANILLA_END_ORE, 1, BlockVanillaEndOre.Type.GOLD.getMetadata()) )
+    					.withOutput( output2 )
+    					.withFirstOptional( output1, (float) 0.9)
     					.build() );
     		
-    		output = ItemHelper.getOre("dustIron", 2);
+    		output1 = ItemHelper.getOre("dustIron", 1);
+    		output2 = ItemHelper.getOre("dustIron", 2);
     		grinder.addRecipe(
-				builder.withInput( new ItemStack(NFBlocks.ORE, 1, BlockNetherOre.Type.IRON.getMetadata()) )
-					.withOutput( output )
-					.withFirstOptional( output, (float) 0.9)
+				builder.withInput( new ItemStack(NFBlocks.VANILLA_ORE, 1, BlockVanillaOre.Type.IRON.getMetadata()) )
+					.withOutput( output2 )
+					.withFirstOptional( output1, (float) 0.9)
 					.build() );
     		
     		if (NFConfig.END_ORES)
     			grinder.addRecipe(
-    				builder.withInput( new ItemStack(NFBlocks.END_ORE, 1, BlockEndOre.Type.IRON.getMetadata()) )
-    					.withOutput( output )
-    					.withFirstOptional( output, (float) 0.9)
+    				builder.withInput( new ItemStack(NFBlocks.VANILLA_END_ORE, 1, BlockVanillaEndOre.Type.IRON.getMetadata()) )
+    					.withOutput( output2 )
+    					.withFirstOptional( output1, (float) 0.9)
     					.build() );
     		
-    		output = ItemHelper.getOre("dustCoal", 2);
+    		output1 = ItemHelper.getOre("dustCoal", 1);
+    		output2 = ItemHelper.getOre("dustCoal", 2);
     		grinder.addRecipe(
-				builder.withInput( new ItemStack(NFBlocks.ORE, 1, BlockNetherOre.Type.COAL.getMetadata()) )
-					.withOutput( output )
-					.withFirstOptional( output, (float) 0.9)
+				builder.withInput( new ItemStack(NFBlocks.VANILLA_ORE, 1, BlockVanillaOre.Type.COAL.getMetadata()) )
+					.withOutput( output1 )
+					.withFirstOptional( output2, (float) 0.9)
 					.build() );
     		
     		if (NFConfig.END_ORES)
     			grinder.addRecipe(
-    				builder.withInput( new ItemStack(NFBlocks.END_ORE, 1, BlockEndOre.Type.COAL.getMetadata()) )
-    					.withOutput( output )
-    					.withFirstOptional( output, (float) 0.9)
+    				builder.withInput( new ItemStack(NFBlocks.VANILLA_END_ORE, 1, BlockVanillaEndOre.Type.COAL.getMetadata()) )
+    					.withOutput( output2 )
+    					.withFirstOptional( output1, (float) 0.9)
     					.build() );
     		
-    		output = ItemHelper.getOre("dustCopper", 2);
+    		if (NFConfig.END_ORES) {
+		        IMaterials materialsApi = AEApi.instance().definitions().materials();
+    		
+	        	Optional<ItemStack> netherQuartzDust = materialsApi.netherQuartzDust().maybeStack(1);
+	        	if (netherQuartzDust.isPresent()) {
+		        	output1 = netherQuartzDust.get();
+	    			grinder.addRecipe(
+	    				builder.withInput( new ItemStack(NFBlocks.VANILLA_END_ORE, 1, BlockVanillaEndOre.Type.QUARTZ.getMetadata()) )
+	    					.withOutput( output1 )
+	    					.withFirstOptional( output1, (float) 0.9)
+	    					.build() );
+	        	}
+    		}
+    		
+    		output1 = ItemHelper.getOre("dustCopper", 1);
+    		output2 = ItemHelper.getOre("dustCopper", 2);
     		grinder.addRecipe(
-				builder.withInput( new ItemStack(NFBlocks.ORE, 1, BlockNetherOre.Type.COPPER.getMetadata()) )
-					.withOutput( output )
-					.withFirstOptional( output, (float) 0.9)
+				builder.withInput( new ItemStack(NFBlocks.TF_ORE, 1, BlockTFOre.Type.COPPER.getMetadata()) )
+					.withOutput( output2 )
+					.withFirstOptional( output1, (float) 0.9)
 					.build() );
     		
     		if (NFConfig.END_ORES)
     			grinder.addRecipe(
-    				builder.withInput( new ItemStack(NFBlocks.END_ORE, 1, BlockEndOre.Type.COPPER.getMetadata()) )
-    					.withOutput( output )
-    					.withFirstOptional( output, (float) 0.9)
+    				builder.withInput( new ItemStack(NFBlocks.TF_END_ORE, 1, BlockTFEndOre.Type.COPPER.getMetadata()) )
+    					.withOutput( output2 )
+    					.withFirstOptional( output1, (float) 0.9)
     					.build() );
     		
-    		output = ItemHelper.getOre("dustTin", 2);
+    		output1 = ItemHelper.getOre("dustTin", 1);
+    		output2 = ItemHelper.getOre("dustTin", 2);
     		grinder.addRecipe(
-				builder.withInput( new ItemStack(NFBlocks.ORE, 1, BlockNetherOre.Type.TIN.getMetadata()) )
-					.withOutput( output )
-					.withFirstOptional( output, (float) 0.9)
+				builder.withInput( new ItemStack(NFBlocks.TF_ORE, 1, BlockTFOre.Type.TIN.getMetadata()) )
+					.withOutput( output2 )
+					.withFirstOptional( output1, (float) 0.9)
 					.build() );
     		
     		if (NFConfig.END_ORES)
     			grinder.addRecipe(
-    				builder.withInput( new ItemStack(NFBlocks.END_ORE, 1, BlockEndOre.Type.TIN.getMetadata()) )
-    					.withOutput( output )
-    					.withFirstOptional( output, (float) 0.9)
+    				builder.withInput( new ItemStack(NFBlocks.TF_END_ORE, 1, BlockTFEndOre.Type.TIN.getMetadata()) )
+    					.withOutput( output2 )
+    					.withFirstOptional( output1, (float) 0.9)
     					.build() );
     		
-    		output = ItemHelper.getOre("dustSilver", 2);
+    		output1 = ItemHelper.getOre("dustSilver", 1);
+    		output2 = ItemHelper.getOre("dustSilver", 2);
     		grinder.addRecipe(
-				builder.withInput( new ItemStack(NFBlocks.ORE, 1, BlockNetherOre.Type.SILVER.getMetadata()) )
-					.withOutput( output )
-					.withFirstOptional( output, (float) 0.9)
+				builder.withInput( new ItemStack(NFBlocks.TF_ORE, 1, BlockTFOre.Type.SILVER.getMetadata()) )
+					.withOutput( output2 )
+					.withFirstOptional( output1, (float) 0.9)
 					.build() );
     		
     		if (NFConfig.END_ORES)
     			grinder.addRecipe(
-    				builder.withInput( new ItemStack(NFBlocks.END_ORE, 1, BlockEndOre.Type.SILVER.getMetadata()) )
-    					.withOutput( output )
-    					.withFirstOptional( output, (float) 0.9)
+    				builder.withInput( new ItemStack(NFBlocks.TF_END_ORE, 1, BlockTFEndOre.Type.SILVER.getMetadata()) )
+    					.withOutput( output2 )
+    					.withFirstOptional( output1, (float) 0.9)
     					.build() );
     		
-    		output = ItemHelper.getOre("dustLead", 2);
+    		output1 = ItemHelper.getOre("dustLead", 1);
+    		output2 = ItemHelper.getOre("dustLead", 2);
     		grinder.addRecipe(
-				builder.withInput( new ItemStack(NFBlocks.ORE, 1, BlockNetherOre.Type.LEAD.getMetadata()) )
-					.withOutput( output )
-					.withFirstOptional( output, (float) 0.9)
+				builder.withInput( new ItemStack(NFBlocks.TF_ORE, 1, BlockTFOre.Type.LEAD.getMetadata()) )
+					.withOutput( output2 )
+					.withFirstOptional( output1, (float) 0.9)
 					.build() );
     		
     		if (NFConfig.END_ORES)
     			grinder.addRecipe(
-    				builder.withInput( new ItemStack(NFBlocks.END_ORE, 1, BlockEndOre.Type.LEAD.getMetadata()) )
-    					.withOutput( output )
-    					.withFirstOptional( output, (float) 0.9)
+    				builder.withInput( new ItemStack(NFBlocks.TF_END_ORE, 1, BlockTFEndOre.Type.LEAD.getMetadata()) )
+    					.withOutput( output2 )
+    					.withFirstOptional( output1, (float) 0.9)
     					.build() );
     		
-    		output = ItemHelper.getOre("dustAluminum", 2);
+    		output1 = ItemHelper.getOre("dustAluminum", 1);
+    		output2 = ItemHelper.getOre("dustAluminum", 2);
     		grinder.addRecipe(
-				builder.withInput( new ItemStack(NFBlocks.ORE, 1, BlockNetherOre.Type.ALUMINUM.getMetadata()) )
-					.withOutput( output )
-					.withFirstOptional( output, (float) 0.9)
+				builder.withInput( new ItemStack(NFBlocks.TF_ORE, 1, BlockTFOre.Type.ALUMINUM.getMetadata()) )
+					.withOutput( output2 )
+					.withFirstOptional( output1, (float) 0.9)
 					.build() );
     		
     		if (NFConfig.END_ORES)
     			grinder.addRecipe(
-    				builder.withInput( new ItemStack(NFBlocks.END_ORE, 1, BlockEndOre.Type.ALUMINUM.getMetadata()) )
-    					.withOutput( output )
-    					.withFirstOptional( output, (float) 0.9)
+    				builder.withInput( new ItemStack(NFBlocks.TF_END_ORE, 1, BlockTFEndOre.Type.ALUMINUM.getMetadata()) )
+    					.withOutput( output2 )
+    					.withFirstOptional( output1, (float) 0.9)
     					.build() );
     		
-    		output = ItemHelper.getOre("dustNickel", 2);
+    		output1 = ItemHelper.getOre("dustNickel", 1);
+    		output2 = ItemHelper.getOre("dustNickel", 2);
     		grinder.addRecipe(
-				builder.withInput( new ItemStack(NFBlocks.ORE, 1, BlockNetherOre.Type.NICKEL.getMetadata()) )
-					.withOutput( output )
-					.withFirstOptional( output, (float) 0.9)
+				builder.withInput( new ItemStack(NFBlocks.TF_ORE, 1, BlockTFOre.Type.NICKEL.getMetadata()) )
+					.withOutput( output2 )
+					.withFirstOptional( output1, (float) 0.9)
 					.build() );
     		
     		if (NFConfig.END_ORES)
     			grinder.addRecipe(
-    				builder.withInput( new ItemStack(NFBlocks.END_ORE, 1, BlockEndOre.Type.NICKEL.getMetadata()) )
-    					.withOutput( output )
-    					.withFirstOptional( output, (float) 0.9)
+    				builder.withInput( new ItemStack(NFBlocks.TF_END_ORE, 1, BlockTFEndOre.Type.NICKEL.getMetadata()) )
+    					.withOutput( output2 )
+    					.withFirstOptional( output1, (float) 0.9)
     					.build() );
     		
-    		output = ItemHelper.getOre("dustPlatinum", 2);
+    		output1 = ItemHelper.getOre("dustPlatinum", 1);
+    		output2 = ItemHelper.getOre("dustPlatinum", 2);
     		grinder.addRecipe(
-				builder.withInput( new ItemStack(NFBlocks.ORE, 1, BlockNetherOre.Type.PLATINUM.getMetadata()) )
-					.withOutput( output )
-					.withFirstOptional( output, (float) 0.9)
+				builder.withInput( new ItemStack(NFBlocks.TF_ORE, 1, BlockTFOre.Type.PLATINUM.getMetadata()) )
+					.withOutput( output2 )
+					.withFirstOptional( output1, (float) 0.9)
 					.build() );
     		
     		if (NFConfig.END_ORES)
     			grinder.addRecipe(
-    				builder.withInput( new ItemStack(NFBlocks.END_ORE, 1, BlockEndOre.Type.PLATINUM.getMetadata()) )
-    					.withOutput( output )
-    					.withFirstOptional( output, (float) 0.9)
+    				builder.withInput( new ItemStack(NFBlocks.TF_END_ORE, 1, BlockTFEndOre.Type.PLATINUM.getMetadata()) )
+    					.withOutput( output2 )
+    					.withFirstOptional( output1, (float) 0.9)
     					.build() );
     		
-    		output = ItemHelper.getOre("dustIridium", 2);
+    		output1 = ItemHelper.getOre("dustIridium", 1);
+    		output2 = ItemHelper.getOre("dustIridium", 2);
     		grinder.addRecipe(
-				builder.withInput( new ItemStack(NFBlocks.ORE, 1, BlockNetherOre.Type.IRIDIUM.getMetadata()) )
-					.withOutput( output )
-					.withFirstOptional( output, (float) 0.9)
+				builder.withInput( new ItemStack(NFBlocks.TF_ORE, 1, BlockTFOre.Type.IRIDIUM.getMetadata()) )
+					.withOutput( output2 )
+					.withFirstOptional( output1, (float) 0.9)
 					.build() );
     		
     		if (NFConfig.END_ORES)
     			grinder.addRecipe(
-    				builder.withInput( new ItemStack(NFBlocks.END_ORE, 1, BlockEndOre.Type.IRIDIUM.getMetadata()) )
-    					.withOutput( output )
-    					.withFirstOptional( output, (float) 0.9)
+    				builder.withInput( new ItemStack(NFBlocks.TF_END_ORE, 1, BlockTFEndOre.Type.IRIDIUM.getMetadata()) )
+    					.withOutput( output2 )
+    					.withFirstOptional( output1, (float) 0.9)
     					.build() );
     		
-    		output = ItemHelper.getOre("dustMithril", 2);
+    		output1 = ItemHelper.getOre("dustMithril", 1);
+    		output2 = ItemHelper.getOre("dustMithril", 2);
     		grinder.addRecipe(
-				builder.withInput( new ItemStack(NFBlocks.ORE, 1, BlockNetherOre.Type.MITHRIL.getMetadata()) )
-					.withOutput( output )
-					.withFirstOptional( output, (float) 0.9)
+				builder.withInput( new ItemStack(NFBlocks.TF_ORE, 1, BlockTFOre.Type.MITHRIL.getMetadata()) )
+					.withOutput( output2 )
+					.withFirstOptional( output1, (float) 0.9)
 					.build() );
     		
     		if (NFConfig.END_ORES)
     			grinder.addRecipe(
-    				builder.withInput( new ItemStack(NFBlocks.END_ORE, 1, BlockEndOre.Type.MITHRIL.getMetadata()) )
-    					.withOutput( output )
-    					.withFirstOptional( output, (float) 0.9)
+    				builder.withInput( new ItemStack(NFBlocks.TF_END_ORE, 1, BlockTFEndOre.Type.MITHRIL.getMetadata()) )
+    					.withOutput( output2 )
+    					.withFirstOptional( output1, (float) 0.9)
     					.build() );
     		
     		if (NFConfig.AE2_ORES) {
@@ -476,33 +509,34 @@ public class NFRecipes {
 		        Optional<ItemStack> certusQuartzDust = materialsApi.certusQuartzDust().maybeStack(1);
 	
 		        if (certusQuartzDust.isPresent()) {
-		        	output = certusQuartzDust.get();
+		        	output1 = certusQuartzDust.get();
 			        grinder.addRecipe(
 		    	        builder.withInput(new ItemStack(NFBlocks.AE2_ORE, 1, BlockAE2Ore.Type.CERTUS.getMetadata()))
-		    		 	.withOutput(output)
-		    		 	.withFirstOptional(output, (float) 0.9)
+		    		 	.withOutput(output1)
+		    		 	.withFirstOptional(output1, (float) 0.9)
 		    		 	.build() );
 
 				    grinder.addRecipe(
 		    	        builder.withInput(new ItemStack(NFBlocks.AE2_ORE, 1, BlockAE2Ore.Type.CHARGED_CERTUS.getMetadata()) )
-		    		 	.withOutput( output )
-		    		 	.withFirstOptional( output, (float) 0.9)
+		    		 	.withOutput( output1 )
+		    		 	.withFirstOptional( output1, (float) 0.9)
 		    		 	.build() );
 
 				    grinder.addRecipe(
 		    	        builder.withInput(new ItemStack(NFBlocks.AE2_ORE, 1, BlockAE2Ore.Type.END_CERTUS.getMetadata()) )
-		    		 	.withOutput(output)
-		    		 	.withFirstOptional(output, (float) 0.9)
+		    		 	.withOutput(output1)
+		    		 	.withFirstOptional(output1, (float) 0.9)
 		    		 	.build() );
 
 			        grinder.addRecipe(
 		    	        builder.withInput(new ItemStack(NFBlocks.AE2_ORE, 1, BlockAE2Ore.Type.END_CHARGED_CERTUS.getMetadata()) )
-		    		 	.withOutput(output )
-		    		 	.withFirstOptional(output, (float) 0.9)
+		    		 	.withOutput(output1 )
+		    		 	.withFirstOptional(output1, (float) 0.9)
 		    		 	.build() );
 		        }
     		}
-    		
+
+    		/*
     		if (NFConfig.EXTRA_ORES) {
 		        IMaterials materialsApi = AEApi.instance().definitions().materials();
 		        Optional<ItemStack> netherQuartzDust = materialsApi.netherQuartzDust().maybeStack(1);
@@ -522,6 +556,8 @@ public class NFRecipes {
 			        	
 		        }
     		}
+*/
+		        
     	}
     }
 }

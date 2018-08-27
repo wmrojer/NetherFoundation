@@ -1,14 +1,12 @@
 package tehseph.netherfoundation.common.block;
 
-import java.util.Optional;
-import java.util.Random;
-
+import tehseph.netherfoundation.Reference;
+import cofh.core.block.BlockCore;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.client.Minecraft;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.EnumRarity;
@@ -20,40 +18,35 @@ import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
-import appeng.api.AEApi;
-import appeng.api.definitions.IMaterials; 
-import cofh.core.block.BlockCore;
-import tehseph.netherfoundation.Reference;
-import tehseph.netherfoundation.client.renderer.effects.ChargedOreFX;
+
+import java.util.Random;
 
 @SuppressWarnings("deprecation")
-public class BlockAE2Ore extends BlockCore {
+public class BlockTFEndOre extends BlockCore {
 
     public static final PropertyEnum<Type> VARIANT = PropertyEnum.create("type", Type.class);
 
-    private static Optional<ItemStack> certusQuartzCrystal;
-    private static Optional<ItemStack> certusQuartzCrystalCharged;
-    
-    public BlockAE2Ore() {
+    public BlockTFEndOre() {
 
         super(Material.ROCK, "netherfoundation");
 
         this.setCreativeTab(Reference.CREATIVE_TAB);
-        this.setUnlocalizedName("ae2_ore");
+        this.setUnlocalizedName("tf_end_ore");
 
-        this.setDefaultState(this.blockState.getBaseState().withProperty(VARIANT, Type.CERTUS));
+        this.setDefaultState(this.blockState.getBaseState().withProperty(VARIANT, Type.COPPER));
 
         this.setSoundType(SoundType.STONE);
         this.setHardness(3.0F);
         this.setResistance(5.0F);
 
-        this.setHarvestLevel("pickaxe", 2);
+        this.setHarvestLevel("pickaxe", 3);
+		setHarvestLevel("pickaxe", 2, getStateFromMeta(Type.COPPER.getMetadata()));
+		setHarvestLevel("pickaxe", 2, getStateFromMeta(Type.TIN.getMetadata()));
+		setHarvestLevel("pickaxe", 2, getStateFromMeta(Type.ALUMINUM.getMetadata()));
+		setHarvestLevel("pickaxe", 4, getStateFromMeta(Type.PLATINUM.getMetadata()));
+		setHarvestLevel("pickaxe", 4, getStateFromMeta(Type.IRIDIUM.getMetadata()));
+		setHarvestLevel("pickaxe", 4, getStateFromMeta(Type.MITHRIL.getMetadata()));
 
-        IMaterials materialsApi = AEApi.instance().definitions().materials();
-        certusQuartzCrystal = materialsApi.certusQuartzCrystal().maybeStack(1);
-        certusQuartzCrystalCharged = materialsApi.certusQuartzCrystalCharged().maybeStack(1);
     }
 
     @Override
@@ -92,21 +85,11 @@ public class BlockAE2Ore extends BlockCore {
     public int damageDropped(IBlockState state) {
 
         int meta = state.getValue(VARIANT).getMetadata();
-
-        if ((meta ==  0 || meta == 2) && certusQuartzCrystal.isPresent())  return certusQuartzCrystal.get().getMetadata(); /* Certus Quartz */     
-        if ((meta ==  1 || meta == 3) && certusQuartzCrystalCharged.isPresent())  return certusQuartzCrystalCharged.get().getMetadata(); /* Charged Certus Quartz */     
-
         return meta;
-
     }
 
     @Override
     public int quantityDropped(IBlockState state, int fortune, Random random) {
-
-        int meta = state.getValue(VARIANT).getMetadata();
-        int bonus = fortune > 0 ? random.nextInt(fortune + 1) + 1 : 1;
-
-       if (meta <= 3)  return 2 * bonus;  /* Certus Quartz */     
 
         return this.quantityDroppedWithBonus(fortune, random);
 
@@ -114,11 +97,6 @@ public class BlockAE2Ore extends BlockCore {
 
     @Override
     public Item getItemDropped(IBlockState state, Random rand, int fortune) {
-
-        int meta = state.getValue(VARIANT).getMetadata();
-
-        if ((meta ==  0 || meta == 2) && certusQuartzCrystal.isPresent())  return certusQuartzCrystal.get().getItem(); /* Certus Quartz */     
-        if ((meta ==  1 || meta == 3) && certusQuartzCrystalCharged.isPresent())  return certusQuartzCrystalCharged.get().getItem(); /* Charged Certus Quartz */     
 
         return Item.getItemFromBlock(this);
 
@@ -134,46 +112,6 @@ public class BlockAE2Ore extends BlockCore {
         return new ItemStack(this, 1, state.getValue(VARIANT).getMetadata());
     }
 
-    @Override
-	@SideOnly( Side.CLIENT )
-	public void randomDisplayTick( final IBlockState state, final World w, final BlockPos pos, final Random r )
-	{
-        int meta = state.getValue(VARIANT).getMetadata();
-        if (meta !=  1 && meta != 3) return;     
-
-        double xOff = ( r.nextFloat() );
-		double yOff = ( r.nextFloat() );
-		double zOff = ( r.nextFloat() );
-
-		switch( r.nextInt( 6 ) )
-		{
-			case 0:
-				xOff = -0.01;
-				break;
-			case 1:
-				yOff = -0.01;
-				break;
-			case 2:
-				xOff = -0.01;
-				break;
-			case 3:
-				zOff = -0.01;
-				break;
-			case 4:
-				xOff = 1.01;
-				break;
-			case 5:
-				yOff = 1.01;
-				break;
-			case 6:
-				zOff = 1.01;
-				break;
-		}
-
-		final ChargedOreFX fx = new ChargedOreFX( w, pos.getX() + xOff, pos.getY() + yOff, pos.getZ() + zOff, 0.0f, 0.0f, 0.0f );
-		Minecraft.getMinecraft().effectRenderer.addEffect( fx );
-	}
-    
     // Prevent block from being destroyed by Ender Dragon
     @Override
     public boolean canEntityDestroy(IBlockState state, IBlockAccess world, BlockPos pos, Entity entity)
@@ -181,40 +119,47 @@ public class BlockAE2Ore extends BlockCore {
     	return false;
     }
     
-    
-	public enum Type implements IStringSerializable {
+    public enum Type implements IStringSerializable {
 
-        // TYPE  			(META, NAME,       				ORENAME,				LIGHT, RARITY)
-        CERTUS				(0,    "certus",				"CertusQuartz", 		0,     EnumRarity.COMMON),
-        CHARGED_CERTUS		(1,    "charged_certus",		"ChargedCertusQuartz",	2,     EnumRarity.COMMON),
-        END_CERTUS			(2,    "end_certus",			"CertusQuartz",			0,     EnumRarity.COMMON),
-        END_CHARGED_CERTUS	(3,    "end_charged_certus",	"ChargedCertusQuartz",	2,     EnumRarity.COMMON);
+        // TYPE  (META, NAME,       LIGHT, RARITY)
+        COPPER   (0,    "copper",   0,     EnumRarity.COMMON),
+		TIN      (1,    "tin",      0,     EnumRarity.COMMON),
+		SILVER   (2,    "silver",   4,     EnumRarity.COMMON),
+		LEAD     (3,    "lead",     0,     EnumRarity.COMMON),
+		ALUMINUM (4,   "aluminum", 0,     EnumRarity.COMMON),
+		NICKEL   (5,   "nickel",   0,     EnumRarity.COMMON),
+		PLATINUM (6,   "platinum", 4,     EnumRarity.UNCOMMON),
+		IRIDIUM  (7,   "iridium",  4,     EnumRarity.UNCOMMON),
+        MITHRIL  (8,   "mithril",  8,     EnumRarity.RARE);
 
 		private static final Type[] METADATA_LOOKUP = new Type[values().length];
 
 		private final int metadata;
 		private final String name;
-		private final String oreName;
 		private final int light;
 		private final EnumRarity rarity;
 
-		Type(int metadata, String name, String oreName, int light, EnumRarity rarity) {
+		Type(int metadata, String name, int light, EnumRarity rarity) {
 
 			this.metadata = metadata;
 			this.name = name;
-			this.oreName = oreName;
 			this.light = light;
 			this.rarity = rarity;
-
 		}
 
+		Type(int metadata, String name, int light) {
+
+			this(metadata, name, light, EnumRarity.COMMON);
+		}
+
+		Type(int metadata, String name) {
+
+			this(metadata, name, 0, EnumRarity.COMMON);
+		}
+		
         @Override
         public String getName() {
 		    return this.name;
-		}
-
-        public String getOreName() {
-		    return this.oreName;
 		}
 
 		public int getMetadata() {
